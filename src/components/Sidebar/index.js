@@ -7,7 +7,7 @@ const Sidebar = ({ className }) => (
     <div className={className}>
         
         <Link to="/">
-            <Logo fill="#f0a" hoverfill="#EEE" />
+            <Logo fill="#000" hoverfill="#0000FF" />
         </Link>
 
         <p>contact me via</p>
@@ -21,9 +21,11 @@ const Sidebar = ({ className }) => (
 
 const SidebarStyled = styled(Sidebar)`
     width: 245px;
+    flex-shrink: 0;
+    flex-grow: 0;
     text-align: center;
-    position: fixed;
     font-size: 13px;
+    background-color: #FFF;
     line-height: 1.7;
     p {
         color: #001d60;

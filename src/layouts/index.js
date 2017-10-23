@@ -35,23 +35,18 @@ const Header = () => (
 )
 
 const TemplateWrapper = ({ children }) => (
-  <div>
+  <div style={{display: 'flex'}}>
     <Helmet
       title="halfof8"
       meta={[
         { name: 'description', content: 'Half of Eight' },
         { name: 'keywords', content: '' },
       ]}
-    />
-    <Sidebar />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
     >
+      <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400" rel="stylesheet" /> 
+    </Helmet>
+    <Sidebar />
+    <div style={{ flexGrow: 1 }}>
       {children()}
     </div>
   </div>
