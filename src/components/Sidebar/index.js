@@ -20,7 +20,7 @@ const Sidebar = ({ className }) => (
 );
 
 const SidebarStyled = styled(Sidebar)`
-    width: 245px;
+    width: 288px;
     flex-shrink: 0;
     flex-grow: 0;
     text-align: center;

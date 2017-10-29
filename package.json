@@ -8,6 +8,10 @@
     "gatsby-link": "^1.6.17",
     "gatsby-plugin-react-helmet": "^1.0.5",
     "gatsby-plugin-styled-components": "^1.0.5",
+    "gatsby-source-filesystem": "^1.5.5",
+    "gatsby-transformer-remark": "^1.7.17",
+    "gatsby-transformer-yaml": "^1.5.11",
+    "react-typing-animation": "^1.1.5",
     "styled-components": "^2.2.1"
   },
   "keywords": [

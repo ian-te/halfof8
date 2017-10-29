@@ -5,39 +5,10 @@ import Helmet from 'react-helmet'
 import Sidebar from '../components/Sidebar'
 import './index.css'
 
-const Header = () => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          Gatsby
-        </Link>
-      </h1>
-    </div>
-  </div>
-)
-
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, data}) => (
   <div style={{display: 'flex'}}>
     <Helmet
-      title="halfof8"
+      title={data ? data.site.siteMetadata.title : 'halfof8'}
       meta={[
         { name: 'description', content: 'Half of Eight' },
         { name: 'keywords', content: '' },
@@ -57,3 +28,14 @@ TemplateWrapper.propTypes = {
 }
 
 export default TemplateWrapper
+
+
+export const query = graphql`
+query LayoutQuery {
+  site {
+    siteMetadata {
+      title
+    }
+  }
+}
+`

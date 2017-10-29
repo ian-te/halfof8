@@ -1,11 +1,27 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 
 export const Item = styled.div`
     display: block;
     height: 100%;
     padding: 1rem;
+    ${props => props.cols == 1 && css`
+        width: 25%
+    `}
+
+    ${props => props.cols == 2 && css`
+        width: 50%
+    `}
+    
+    ${props => props.cols == 3 && css`
+        width: 75%
+    `}
+
+    ${props => props.cols == 4 && css`
+        width: 100%
+    `}
+
 `
 
 export const Section = styled.div`
