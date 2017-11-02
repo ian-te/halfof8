@@ -1,16 +1,12 @@
 {
   "assetsByChunkName": {
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-2fe94ebfbff28b7d613e.js",
-      "component---src-pages-index-js-2fe94ebfbff28b7d613e.js.map"
+      "component---src-pages-index-js-16fb79f37dd7e7fa1043.js",
+      "component---src-pages-index-js-16fb79f37dd7e7fa1043.js.map"
     ],
     "path---": [
       "path----f988e05819cac9c013bc.js",
       "path----f988e05819cac9c013bc.js.map"
-    ],
-    "component---cache-dev-404-page-js": [
-      "component---cache-dev-404-page-js-3d083a3801da42ce33cb.js",
-      "component---cache-dev-404-page-js-3d083a3801da42ce33cb.js.map"
     ],
     "path---project-dark-tower": [
       "path---project-dark-tower-a0e39f21c11f6a62c5ab.js",
@@ -49,14 +45,10 @@
       "component---src-pages-page-2-js-075954cd9c4544c7dcd8.js.map"
     ],
     "app": [
-      "app-d04940eff553d5c31413.js",
+      "app-569154eef17200c6035d.js",
       "build-js-styles.css",
-      "app-d04940eff553d5c31413.js.map",
+      "app-569154eef17200c6035d.js.map",
       "build-js-styles.css.map"
-    ],
-    "path---dev-404-page": [
-      "path---dev-404-page-6a2ad8431d19101dc428.js",
-      "path---dev-404-page-6a2ad8431d19101dc428.js.map"
     ],
     "path---404": [
       "path---404-a0e39f21c11f6a62c5ab.js",
