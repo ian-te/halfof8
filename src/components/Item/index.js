@@ -34,7 +34,7 @@ const InnerItem = styled.div`
 
 const ItemBase = ({ cols, children, tag, secondary, className, theme }) => (
     <Col cols={cols} style={{ padding: "4px" }}>
-        <Link to="/project/dark-tower/" style={{textDecoration: 'none'}}>
+        <Link to="/project/dark-tower" style={{textDecoration: 'none'}}>
             <div className={className} style={{}}>
                 <InnerItem>
                     {tag ? <Tag theme={theme}>{tag}</Tag> : null}

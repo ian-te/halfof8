@@ -4,8 +4,7 @@ import { Section, Col } from '../components/Section'
 import { Item } from '../components/Item'
 import { Intro } from '../components/Intro'
 
-const IndexPage = ({ data }) => {
-  console.log(data)
+const IndexPage = () => {
   return (
     <div>
       <Section>
@@ -204,18 +203,3 @@ const IndexPage = ({ data }) => {
 }
 
 export default IndexPage
-
-export const query = graphql`
-  query MainPageQuery {
-    allDataYaml {
-      edges {
-        node {
-          main {
-            title
-            description
-          }
-        }
-      }
-    }
-  }
-`
