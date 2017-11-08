@@ -1,2 +1,2 @@
-webpackJsonp([0x81b8806e4260],{344:function(o,e){o.exports={data:{allDataYaml:{edges:[{node:{main:{title:"Buzz'n'frog",description:"## Hi! I'm so cool! Please post more\nIf necessary\n"}}},{node:{main:{title:"Anton Sokolov",description:"Hi! I'm so cool! Please post more\nIf necessary\n"}}}]}},pathContext:{}}}});
+webpackJsonp([0x81b8806e4260],{339:function(o,e){o.exports={data:{allDataYaml:{edges:[{node:{main:{title:"Buzz'n'frog",description:"## Hi! I'm so cool! Please post more\nIf necessary\n"}}},{node:{main:{title:"Anton Sokolov",description:"Hi! I'm so cool! Please post more\nIf necessary\n"}}}]}},pathContext:{}}}});
 //# sourceMappingURL=path---index-bca8461eabd72cded9f6.js.map
