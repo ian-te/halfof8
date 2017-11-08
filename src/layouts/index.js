@@ -3,10 +3,11 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import Sidebar from '../components/Sidebar'
+import Layout from './layout'
 import './index.css'
 
-const TemplateWrapper = ({ children, data}) => (
-  <div style={{display: 'flex'}}>
+const TemplateWrapper = ({ children, data }) => (
+  <Layout>
     <Helmet
       title={data ? data.site.siteMetadata.title : 'halfof8'}
       meta={[
@@ -14,13 +15,13 @@ const TemplateWrapper = ({ children, data}) => (
         { name: 'keywords', content: '' },
       ]}
     >
-      <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400" rel="stylesheet" /> 
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Helmet>
-    <Sidebar />
-    <div style={{ flexGrow: 1 }}>
-      {children()}
+    <div style={{}}>
+      <Sidebar />
     </div>
-  </div>
+    <div style={{ flexGrow: 1 }}>{children()}</div>
+  </Layout>
 )
 
 TemplateWrapper.propTypes = {
@@ -29,13 +30,12 @@ TemplateWrapper.propTypes = {
 
 export default TemplateWrapper
 
-
 export const query = graphql`
-query LayoutQuery {
-  site {
-    siteMetadata {
-      title
+  query LayoutQuery {
+    site {
+      siteMetadata {
+        title
+      }
     }
   }
-}
 `
