@@ -32,19 +32,6 @@ const InnerItem = styled.div`
     padding: 26px;
 `;
 
-const ItemBase = ({ cols, children, tag, secondary, className, theme }) => (
-    <Col cols={cols} style={{ padding: "4px" }}>
-        <Link to="/project/dark-tower" style={{textDecoration: 'none'}}>
-            <div className={className} style={{}}>
-                <InnerItem>
-                    {tag ? <Tag theme={theme}>{tag}</Tag> : null}
-                    <Description>{children}</Description>
-                </InnerItem>
-            </div>
-        </Link>
-    </Col>
-);
-
 const lightGradient = `linear-gradient(
     to right,
     rgba(255, 255, 255, 0.3),
@@ -58,6 +45,20 @@ const darkGradient = `linear-gradient(
     rgba(0, 0, 0, 0.3) 140px,
     rgba(0, 0, 0, 0) 290px
 )`;
+
+const ItemBase = ({ cols, children, tag, secondary, className, theme }) => (
+    <Col cols={cols} style={{ padding: "4px" }}>
+        <Link to="/project/dark-tower" style={{textDecoration: 'none'}}>
+            <div className={className} style={{}}>
+                <InnerItem>
+                    {tag ? <Tag theme={theme}>{tag}</Tag> : null}
+                    <Description>{children}</Description>
+                </InnerItem>
+            </div>
+        </Link>
+    </Col>
+);
+
 
 export const Item = styled(ItemBase)`
     background-position: center center;

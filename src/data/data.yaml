@@ -1,9 +1,0 @@
-main: 
-  title: Buzz'n'frog
-  nested:
-    test: test string
-  description: >
-    ## Hi! I'm so cool!
-    Please post more
-
-    If necessary

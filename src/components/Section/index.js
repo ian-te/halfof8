@@ -39,7 +39,7 @@ export const Section = styled.div`
   display: flex;
   /*height: 512px;*/
   width: 100%;
-  justify-content: space-between;
+  justify-content: left;
   background-color: #fff;
   align-items: stretch;
   flex-wrap: wrap;
