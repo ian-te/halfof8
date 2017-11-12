@@ -7,18 +7,13 @@ module.exports = {
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sharp`,
-        'gatsby-plugin-catch-links',
+        "gatsby-plugin-catch-links",
+        `gatsby-transformer-remark`,
         {
-          resolve: 'gatsby-transformer-remark',
-          options: {
-            plugins: [] // just in case those previously mentioned remark plugins sound cool :)
-          }
-        },
-        {
-            resolve: `gatsby-source-filesystem`,
+            resolve: `gatsby-source-contentful`,
             options: {
-                path: `${__dirname}/src/pages`,
-                name: "pages"
+                spaceId: process.env.spaceId,
+                accessToken: process.env.accessToken
             }
         }
     ]
