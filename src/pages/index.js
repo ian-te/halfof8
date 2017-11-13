@@ -26,9 +26,8 @@ const IndexPage = ({ data }) => {
 							cols={node.width}
 							tag={node.tag}
 							secondary={node.secodaryTag}
-							theme={node.darkTheme ? 'dark' : 'light'}
+							theme={node.theme ? node.theme : 'light'}
 						>
-							<h2>{node.name}</h2>
 							<div dangerouslySetInnerHTML={{ __html: node.shortText.childMarkdownRemark.html}} />
 						</Item>)
 				}
