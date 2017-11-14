@@ -17,10 +17,11 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         graphql(
             `
                 {
-                    allContentfulPortfolioItem(limit: 1000, sort: {order: ASC, fields: [order, createdAt]}) {
+                    allContentfulPortfolioItem(limit: 1000, sort: {order: ASC, fields: [order]}) {
                         edges {
                             node {
                                 id
+                                slug
                             }
                         }
                     }
@@ -45,7 +46,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     // as a template component. The `context` is
                     // optional but is often necessary so the template
                     // can query data specific to each page.
-                    path: `/project/${edge.node.id}/`,
+                    path: `/project/${edge.node.slug ? edge.node.slug : edge.node.id}/`,
                     component: slash(productTemplate),
                     context: {
                         id: edge.node.id

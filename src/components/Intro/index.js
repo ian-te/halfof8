@@ -74,7 +74,7 @@ class IntroBase extends React.Component {
 }
 
 export const Intro = styled(IntroBase)`
-  font-size: 76px;
+  font-size: 5vw;
   word-break: keep-all;
   font-weight: 300;
   line-height: ${1.38};
@@ -84,12 +84,15 @@ export const Intro = styled(IntroBase)`
   margin: 26px 30px;
   padding: 26px;
   box-sizing: content-box;
+  @media (min-width: 1920px) {
+    font-size: 74px;
+  }
   @media (max-width: 1300px) {
     font-size: 50px;
     min-height: ${1.4 * 3}em;
     margin: 26px 0;
   }
-  @media (max-width: 580px) {
+  @media (max-width: 500px) {
     font-size: 38px;
     line-height: ${1.32}em;
     min-height: ${1.32 * 3} em;

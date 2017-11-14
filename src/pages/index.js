@@ -8,8 +8,9 @@ const IndexPage = ({ data }) => {
     console.log(data);
     const items = data.allContentfulPortfolioItem.edges;
     const getBackgroundImage = node =>
-        node.indexBackgroundImage ? node.indexBackgroundImage.resolutions.src : 
-            (node.theme === 'dark' ? 'https://placehold.it/1024x512/333/EEE' : `https://placehold.it/1024x512/EEE/333`)
+        node.indexBackgroundImage ? node.indexBackgroundImage.resolutions.src : (
+            node.theme === 'dark' ? 'https://placehold.it/1024x512/333/aaa' : 'https://placehold.it/1024x512/aaa/333'
+        )
     return (
         <div>
             <Section>
@@ -32,7 +33,6 @@ const IndexPage = ({ data }) => {
                         secondary={node.secodaryTag}
                         theme={node.theme ? node.theme : "light"}
                     >
-                        {node.id}
                         <div
                             dangerouslySetInnerHTML={{
                                 __html: node.shortText.childMarkdownRemark.html
@@ -40,46 +40,6 @@ const IndexPage = ({ data }) => {
                         />
                     </Item>
                 ))}
-                <Item
-                    cols={2}
-                    tag="Digital"
-                    secondary="#halfof8"
-                    theme="dark"
-                    background="https://placehold.it/1024x512/222/333"
-                >
-                    <h2>
-                        Eveeh<br />Car Rental
-                    </h2>
-                    <p>
-                        Eveeh is a very first Australian electric car sharing
-                        and renting digital service.
-                    </p>
-                    <p>
-                        As a Product designer I designed user flows, component
-                        based visual language, oversaw the development and
-                        implementation.
-                    </p>
-                </Item>
-                <Item
-                    cols={4}
-                    tag="Digital"
-                    secondary="#halfof8"
-                    theme="dark"
-                    background="https://placehold.it/1024x512/222/333"
-                >
-                    <h2>
-                        Eveeh<br />Car Rental
-                    </h2>
-                    <p>
-                        Eveeh is a very first Australian electric car sharing
-                        and renting digital service.
-                    </p>
-                    <p>
-                        As a Product designer I designed user flows, component
-                        based visual language, oversaw the development and
-                        implementation.
-                    </p>
-                </Item>
             </Section>
         </div>
     );
@@ -89,13 +49,15 @@ export default IndexPage;
 
 export const pageQuery = graphql`
     query PortfolioItemsList {
-        allContentfulPortfolioItem {
+        allContentfulPortfolioItem(limit: 1000, sort: {order: ASC, fields: [order]}) {
             edges {
                 node {
                     id
                     name
                     tag
                     secondaryTag
+                    order
+                    slug
                     indexBackgroundImage {
                         resolutions {
                             aspectRatio
