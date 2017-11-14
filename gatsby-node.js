@@ -17,7 +17,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         graphql(
             `
                 {
-                    allContentfulPortfolioItem(limit: 1000) {
+                    allContentfulPortfolioItem(limit: 1000, sort: {order: ASC, fields: [order, createdAt]}) {
                         edges {
                             node {
                                 id

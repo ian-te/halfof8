@@ -46,9 +46,9 @@ const darkGradient = `linear-gradient(
     rgba(0, 0, 0, 0) 290px
 )`;
 
-const ItemBase = ({ cols, children, tag, secondary, className, theme }) => (
+const ItemBase = ({ link, cols, children, tag, secondary, className, theme }) => (
     <Col cols={cols} style={{ padding: "4px" }}>
-        <Link to="/project/dark-tower" style={{textDecoration: 'none'}}>
+        <Link to={link} style={{textDecoration: 'none'}}>
             <div className={className} style={{}}>
                 <InnerItem>
                     {tag ? <Tag theme={theme}>{tag}</Tag> : null}

@@ -9,7 +9,7 @@ export default function Template({data}) {
     return (
 		<div>
 			<h1>Post</h1>
-			{/* <div dangerouslySetInnerHTML={{ __html: pathContext.html}} /> */}
+				<div dangerouslySetInnerHTML={{ __html: data.html}} />
 		</div>
     );
 }
@@ -21,7 +21,8 @@ export const pageQuery = graphql`
 	    node {
 		  id
 		  name
-		  tag
+			theme
+			tag
 		  secondaryTag
 	    }
 	  }

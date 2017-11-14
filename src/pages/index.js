@@ -5,8 +5,11 @@ import { Item } from "../components/Item";
 import { Intro } from "../components/Intro";
 
 const IndexPage = ({ data }) => {
-	console.log(data)
+    console.log(data);
     const items = data.allContentfulPortfolioItem.edges;
+    const getBackgroundImage = node =>
+        node.indexBackgroundImage ? node.indexBackgroundImage.resolutions.src : 
+            (node.theme === 'dark' ? 'https://placehold.it/1024x512/333/EEE' : `https://placehold.it/1024x512/EEE/333`)
     return (
         <div>
             <Section>
@@ -20,17 +23,23 @@ const IndexPage = ({ data }) => {
                         ]}
                     />
                 </Col>
-				{
-					items.map(({node}) => 
-						<Item 
-							cols={node.width}
-							tag={node.tag}
-							secondary={node.secodaryTag}
-							theme={node.theme ? node.theme : 'light'}
-						>
-							<div dangerouslySetInnerHTML={{ __html: node.shortText.childMarkdownRemark.html}} />
-						</Item>)
-				}
+                {items.map(({ node }) => (
+                    <Item
+                        cols={node.width}
+                        tag={node.tag}
+                        link={"project/" + (node.slug ? node.slug : node.id)}
+                        background={getBackgroundImage(node)}
+                        secondary={node.secodaryTag}
+                        theme={node.theme ? node.theme : "light"}
+                    >
+                        {node.id}
+                        <div
+                            dangerouslySetInnerHTML={{
+                                __html: node.shortText.childMarkdownRemark.html
+                            }}
+                        />
+                    </Item>
+                ))}
                 <Item
                     cols={2}
                     tag="Digital"
@@ -86,8 +95,18 @@ export const pageQuery = graphql`
                     id
                     name
                     tag
-					secondaryTag
-					width
+                    secondaryTag
+                    indexBackgroundImage {
+                        resolutions {
+                            aspectRatio
+                            width
+                            height
+                            src
+                            srcSet
+                        }
+                    }
+                    theme
+                    width
                     shortText {
                         childMarkdownRemark {
                             html
