@@ -1,0 +1,2 @@
+webpackJsonp([0x99ff0130d3a5],{351:function(a,e){a.exports={data:{allContentfulPortfolioItem:{edges:[{node:{id:"hKFrQ6JgWs2COaC44ysAU",name:"Eveeh Car Rental",theme:"dark",tag:"Digital",secondaryTag:null}}]}},pathContext:{id:"hKFrQ6JgWs2COaC44ysAU"}}}});
+//# sourceMappingURL=path---project-h-k-fr-q-6-jg-ws-2-c-oa-c-44-ys-au-0cbb4dc7681700356ff2.js.map

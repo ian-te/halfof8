@@ -1,0 +1,2 @@
+webpackJsonp([0x86797f63b4bf],{349:function(o,t){o.exports={data:{allContentfulPortfolioItem:{edges:[{node:{id:"c5kP4boWUGkuwESAuqK266U",name:"Anton Sokolov",theme:"dark",tag:"About",secondaryTag:"#halfof8"}}]}},pathContext:{id:"c5kP4boWUGkuwESAuqK266U"}}}});
+//# sourceMappingURL=path---project-c-5-k-p-4-bo-wu-gkuw-es-auq-k-266-u-e1b4dfe07ae26161f1ca.js.map
