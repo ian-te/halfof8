@@ -5,6 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "gatsby": "^1.9.45",
+    "gatsby-image": "^1.0.24",
     "gatsby-link": "^1.6.17",
     "gatsby-plugin-catch-links": "^1.0.9",
     "gatsby-plugin-google-fonts": "^0.0.3",

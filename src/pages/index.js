@@ -7,10 +7,10 @@ import { Intro } from "../components/Intro";
 const IndexPage = ({ data }) => {
     console.log(data);
     const items = data.allContentfulPortfolioItem.edges;
-    const getBackgroundImage = node =>
-        node.indexBackgroundImage ? node.indexBackgroundImage.resolutions.src : (
-            node.theme === 'dark' ? 'https://placehold.it/1024x512/333/aaa' : 'https://placehold.it/1024x512/aaa/333'
-        )
+    const getNodeImages = node => ({
+        background: node.indexBackgroundImage,
+        image: node.indexImage
+    });
     return (
         <div>
             <Section>
@@ -24,12 +24,14 @@ const IndexPage = ({ data }) => {
                         ]}
                     />
                 </Col>
-                {items.map(({ node }) => (
+                {items.map(({ node }, key) => (
                     <Item
                         cols={node.width}
                         tag={node.tag}
+                        key={node.id || key}
                         link={"project/" + (node.slug ? node.slug : node.id)}
-                        background={getBackgroundImage(node)}
+                        // background={getBackgroundImage(node)}
+                        images={getNodeImages(node)}
                         secondary={node.secodaryTag}
                         theme={node.theme ? node.theme : "light"}
                     >
@@ -49,7 +51,10 @@ export default IndexPage;
 
 export const pageQuery = graphql`
     query PortfolioItemsList {
-        allContentfulPortfolioItem(limit: 1000, sort: {order: ASC, fields: [order]}) {
+        allContentfulPortfolioItem(
+            limit: 1000
+            sort: { order: ASC, fields: [order] }
+        ) {
             edges {
                 node {
                     id
@@ -58,6 +63,21 @@ export const pageQuery = graphql`
                     secondaryTag
                     order
                     slug
+                    indexImage {
+                        resolutions {
+                            aspectRatio
+                            width
+                            height
+                            src
+                            srcSet
+                        }
+                        sizes {
+                            aspectRatio
+                            src
+                            srcSet
+                            sizes
+                        }
+                    }
                     indexBackgroundImage {
                         resolutions {
                             aspectRatio
@@ -65,6 +85,12 @@ export const pageQuery = graphql`
                             height
                             src
                             srcSet
+                        }
+                        sizes {
+                            aspectRatio
+                            src
+                            srcSet
+                            sizes
                         }
                     }
                     theme
