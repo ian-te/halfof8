@@ -4,7 +4,6 @@ import Helmet from "react-helmet";
 // // import '../css/blog-post.css';
 
 export default function Template({ data }) {
-    if(!data) return null
     const node = data.allContentfulPortfolioItem.edges[0].node;
     if(!node.body) return null
     return (
