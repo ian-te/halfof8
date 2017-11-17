@@ -28,13 +28,6 @@ export const pageQuery = graphql`
                         id
                         childMarkdownRemark {
                             html
-                            excerpt
-                            frontmatter {
-                                title
-                                _PARENT
-                                coolstuff
-                                parent
-                            }
                         }
                     }
                 }
