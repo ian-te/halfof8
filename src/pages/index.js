@@ -8,7 +8,7 @@ const getLink = node =>
         node.slug ? 'project/' + node.slug : ''
     ))
 const IndexPage = ({ data }) => {
-    console.log(data);
+    if(!data) return null
     const items = data.allContentfulPortfolioItem.edges;
     const getNodeImages = node => ({
         background: node.indexBackgroundImage,
