@@ -83,7 +83,7 @@ export const pageQuery = graphql`
                         }
                     }
                     indexBackgroundImage {
-                        resolutions(height: 512) {
+                        resolutions {
                             aspectRatio
                             width
                             height
