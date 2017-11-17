@@ -88,7 +88,8 @@ const ItemBase = ({
             
                 {images.background ? (
                     <Image
-                        resolutions={images.background.responsiveResolution}
+                        // sizes={images.background.sizes}
+                        resolutions={images.background.resolutions}
                         width="100%"
                         height="100%"
                         style={{
