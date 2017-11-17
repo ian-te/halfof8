@@ -30,10 +30,15 @@ const Tag = styled.div`
             : `rgba(0, 29, 96, 0.1)`};
 `;
 
+
 const InnerItem = styled.div`
-    padding: 26px;
+    padding: 26px 26px 56px;
     position: relative;
     z-index: 1;
+    min-height: 512px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 `;
 
 const lightGradient = `linear-gradient(
@@ -50,6 +55,17 @@ const darkGradient = `linear-gradient(
     rgba(0, 0, 0, 0) 290px
 )`;
 
+const Overlay = styled.div`
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: ${props =>
+        props.theme == "dark" ? darkGradient : lightGradient};
+
+`
+
 const ItemBase = ({
     link,
     cols,
@@ -61,12 +77,12 @@ const ItemBase = ({
     images
 }) => (
     <Col cols={cols} style={{ padding: "4px" }}>
-        <Link to={link} style={{ textDecoration: "none" }}>
-            <div className={className} style={{}}>
+        <Link to={link} style={{ display: 'block', height: '100%', textDecoration: "none" }}>
+            <div className={className} style={{position: 'relative'}}>
+            
                 {images.background ? (
                     <Image
                         sizes={images.background.sizes}
-                        resolutions={images.background.resolutions}
                         width="100%"
                         height="100%"
                         style={{
@@ -77,17 +93,33 @@ const ItemBase = ({
                         }}
                     />
                 ) : null}
+                <Overlay theme={theme}></Overlay>
                 <InnerItem>
-                    {tag ? <Tag theme={theme}>{tag}</Tag> : null}
-                    <Description>{children}</Description>
-                    {images.image ? (
-                        <Image
-                            sizes={images.image.sizes}
-                            resolutions={images.image.resolutions}
-                            width={250}
-                            height={250}
-                       />
-                    ) : null}
+                    <div>
+                        <div style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                        }}>
+                            {tag ? <Tag theme={theme}>{tag}</Tag> : null}
+                            {secondary ? <div style={{fontSize: 13}}>{secondary}</div> : null}
+                        </div>
+                        <Description>
+                            {children}
+                        </Description>
+                    </div>
+                    <div>
+                        {images.image ? (
+                            <Image
+                                sizes={images.image.sizes}
+                                style={{
+                                    margin: '0 auto',
+                                    maxWidth: "200px",
+                                    width: "100%"
+                                }}
+                                // resolutions={images.image.resolutions}
+                        />
+                        ) : null}
+                    </div>
                 </InnerItem>
             </div>
         </Link>
@@ -100,18 +132,13 @@ export const Item = styled(ItemBase)`
     min-height: 512px;
     text-decoration: none;
     color: ${props => (props.theme == "dark" ? "#FFF" : "#001d60")};
-    background-image: ${props =>
-        props.theme == "dark" ? darkGradient : lightGradient};
-
+    box-sizing: border-box;
     background-color: ${props => (props.theme == "dark" ? "#333" : "#EBEBEB")};
-    box-sizing: content-box;
     position: relative;
     transition: box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     &:hover {
         box-shadow: 0 37.125px 70px -12.125px rgba(0, 0, 0, 0.3);
         z-index: 1;
-        /*padding: 8px;
-        margin: -8px -8px;*/
     }
     @media (max-width: 580px) {
         min-height: 0;

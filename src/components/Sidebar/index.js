@@ -20,7 +20,7 @@ const Sidebar = ({ className }) => (
         <a href="mailto:jetixc@gmail.com">jetixc@gmail.com</a>
         <br />
         <a href="https://fb.com/stayswim">fb</a>{' '}
-        <a href="https://instagram.com/halfof8">instagam</a>
+        <a href="https://instagram.com/halfof8">instagram</a>
       </p>
     </MobileHide>
   </div>

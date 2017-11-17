@@ -3,7 +3,10 @@ import Link from "gatsby-link";
 import { Section, Col } from "../components/Section";
 import { Item } from "../components/Item";
 import { Intro } from "../components/Intro";
-
+const getLink = node => 
+    (node.externalUrl ? node.externalUrl : (
+        node.slug ? 'project/' + node.slug : ''
+    ))
 const IndexPage = ({ data }) => {
     console.log(data);
     const items = data.allContentfulPortfolioItem.edges;
@@ -29,10 +32,10 @@ const IndexPage = ({ data }) => {
                         cols={node.width}
                         tag={node.tag}
                         key={node.id || key}
-                        link={"project/" + (node.slug ? node.slug : node.id)}
+                        link={getLink(node)}
                         // background={getBackgroundImage(node)}
                         images={getNodeImages(node)}
-                        secondary={node.secodaryTag}
+                        secondary={node.secondaryTag}
                         theme={node.theme ? node.theme : "light"}
                     >
                         <div
@@ -63,15 +66,16 @@ export const pageQuery = graphql`
                     secondaryTag
                     order
                     slug
+                    externalUrl
                     indexImage {
-                        resolutions {
+                        responsiveResolution(width: 200) {
                             aspectRatio
                             width
                             height
                             src
                             srcSet
                         }
-                        sizes {
+                        sizes(maxWidth: 200) {
                             aspectRatio
                             src
                             srcSet
@@ -79,14 +83,14 @@ export const pageQuery = graphql`
                         }
                     }
                     indexBackgroundImage {
-                        resolutions {
+                        resolutions(height: 512) {
                             aspectRatio
                             width
                             height
                             src
                             srcSet
                         }
-                        sizes {
+                        sizes(maxWidth: 1700) {
                             aspectRatio
                             src
                             srcSet
