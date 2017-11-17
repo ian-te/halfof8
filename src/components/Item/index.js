@@ -65,7 +65,13 @@ const Overlay = styled.div`
         props.theme == "dark" ? darkGradient : lightGradient};
 
 `
-
+const TagContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    @media(min-width: 590px) {
+        max-width: 230px;
+    }
+`
 const ItemBase = ({
     link,
     cols,
@@ -96,13 +102,10 @@ const ItemBase = ({
                 <Overlay theme={theme}></Overlay>
                 <InnerItem>
                     <div>
-                        <div style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                        }}>
+                        <TagContainer>
                             {tag ? <Tag theme={theme}>{tag}</Tag> : null}
                             {secondary ? <div style={{fontSize: 13}}>{secondary}</div> : null}
-                        </div>
+                        </TagContainer>
                         <Description>
                             {children}
                         </Description>

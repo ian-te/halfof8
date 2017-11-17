@@ -83,14 +83,14 @@ export const pageQuery = graphql`
                         }
                     }
                     indexBackgroundImage {
-                        resolutions {
+                        responsiveResolution(width: 1700, height: 512) {
                             aspectRatio
                             width
                             height
                             src
                             srcSet
                         }
-                        sizes(maxWidth: 1700) {
+                        sizes(maxWidth: 1800) {
                             aspectRatio
                             src
                             srcSet
