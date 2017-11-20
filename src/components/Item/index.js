@@ -12,6 +12,9 @@ const Description = styled.div`
         font-weight: 100;
         line-height: 1.3;
     }
+    p:last-child {
+        margin-bottom: 0;
+    }
 `;
 const Tag = styled.div`
     padding: 3px 9px;
