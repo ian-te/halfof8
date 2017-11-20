@@ -110,7 +110,7 @@ const getDevicePixelRatio = function () {
     return ratio;
 };
 const getBackgroundImage = image => {
-    return image ? `url("${image.file.url}?h=${ 512 * getDevicePixelRatio() || 1 }&q=80")` : false;
+    return image ? `url("${image.file.url}?h=${ 512 * getDevicePixelRatio() || 1 }&q=50")` : false;
 };
 
 const ItemBase = ({
