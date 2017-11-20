@@ -9,6 +9,7 @@ const getLink = node =>
         : node.slug ? "project/" + node.slug : "";
 const IndexPage = ({ data }) => {
     const items = data.allContentfulPortfolioItem.edges;
+    console.log(items)
     const getNodeImages = node => ({
         background: node.indexBackgroundImage,
         image: node.indexImage
@@ -41,7 +42,7 @@ const IndexPage = ({ data }) => {
                 </Item>
             </Section>
             <Section>
-                {items.splice(1).map(({ node }, key) => (
+                {items.filter((edge, key) => key !== 0).map(({ node }, key) => (
                     <Item
                         cols={node.width}
                         tag={node.tag}
