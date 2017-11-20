@@ -98,6 +98,7 @@ const WrapWithLink = ({ children, link }) =>
 
 const getDevicePixelRatio = function () {
     var ratio = 1;
+    if(typeof window === 'undefined') return ratio
     // To account for zoom, change to use deviceXDPI instead of systemXDPI
     if (window.screen.systemXDPI !== undefined && window.screen.logicalXDPI       !== undefined && window.screen.systemXDPI > window.screen.logicalXDPI) {
         // Only allow for values > 1
@@ -109,8 +110,7 @@ const getDevicePixelRatio = function () {
     return ratio;
 };
 const getBackgroundImage = image => {
-    console.log(image ? image.file.url : false);
-    return image ? `url(${image.file.url}?h=${ 512 * getDevicePixelRatio() || 1 }&q=80` : false;
+    return image ? `url("${image.file.url}?h=${ 512 * getDevicePixelRatio() || 1 }&q=80")` : false;
 };
 
 const ItemBase = ({

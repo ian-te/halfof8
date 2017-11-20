@@ -28,7 +28,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                 }
             `
         ).then(result => {
-            console.log(result.data.allContentfulPortfolioItem.edges);
             if (result.errors) {
                 reject(result.errors);
             }
