@@ -3,10 +3,10 @@ import Link from "gatsby-link";
 import { Section, Col } from "../components/Section";
 import { Item } from "../components/Item";
 import { Intro } from "../components/Intro";
-const getLink = node => 
-    (node.externalUrl ? node.externalUrl : (
-        node.slug ? 'project/' + node.slug : ''
-    ))
+const getLink = node =>
+    node.externalUrl
+        ? node.externalUrl
+        : node.slug ? "project/" + node.slug : "";
 const IndexPage = ({ data }) => {
     const items = data.allContentfulPortfolioItem.edges;
     const getNodeImages = node => ({
@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
     });
     return (
         <div>
-            <Section>
+            <Section bg="#030303" style={{alignItems: 'center', border: '4px solid #FFF'}}>
                 <Col cols={2}>
                     <Intro
                         phrases={[
@@ -26,7 +26,22 @@ const IndexPage = ({ data }) => {
                         ]}
                     />
                 </Col>
-                {items.map(({ node }, key) => (
+                <Item
+                    cols={2}
+                    tag={items[0].node.tag}
+                    link={getLink(items[0].node)}
+                    images={getNodeImages(items[0].node)}
+                    theme="dark"
+                >
+                    <div
+                        dangerouslySetInnerHTML={{
+                            __html: items[0].node.shortText.childMarkdownRemark.html
+                        }}
+                    />
+                </Item>
+            </Section>
+            <Section>
+                {items.splice(1).map(({ node }, key) => (
                     <Item
                         cols={node.width}
                         tag={node.tag}
@@ -82,16 +97,10 @@ export const pageQuery = graphql`
                         }
                     }
                     indexBackgroundImage {
-                        responsiveResolution(width: 1700, height: 512) {
-                            aspectRatio
-                            src
-                            srcSet
-                        }
-                        responsiveSizes(maxWidth: 1700, maxHeight: 512, quality: 80) {
-                            aspectRatio
-                            src
-                            srcSet
-                            sizes
+                        file {
+                            url
+                            fileName
+                            contentType
                         }
                     }
                     theme

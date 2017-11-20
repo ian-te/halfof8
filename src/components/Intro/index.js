@@ -74,13 +74,13 @@ class IntroBase extends React.Component {
 }
 
 export const Intro = styled(IntroBase)`
-  font-size: 5vw;
+  font-size: 4.3vw;
   word-break: keep-all;
   font-weight: 300;
   line-height: ${1.38};
   min-height: ${1.38 * 3}em;
   text-align: left;
-  color: #001d60;
+  color: #FFFFFF;
   margin: 26px 30px;
   padding: 26px;
   box-sizing: content-box;

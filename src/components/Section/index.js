@@ -5,7 +5,7 @@ export const Col = styled.div`
   display: block;
   height: 100%;
   box-sizing: border-box;
-  background-color: #ffffff;
+  background-color: transparent;
   background-image: url(${props => props.background});
   ${props =>
     props.cols == 1 &&
@@ -40,7 +40,7 @@ export const Section = styled.div`
   /*height: 512px;*/
   width: 100%;
   justify-content: left;
-  background-color: #fff;
+  background-color: ${ props => props.bg || '#fff' };
   align-items: stretch;
   flex-wrap: wrap;
   maxwidth: 1960px;

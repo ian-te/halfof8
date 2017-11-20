@@ -19,7 +19,8 @@ const Description = styled.div`
 const Tag = styled.div`
     padding: 3px 9px;
     line-height: 1.3em;
-    border-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
     height: 28px;
     display: inline-flex;
     justify-content: center;
@@ -33,7 +34,6 @@ const Tag = styled.div`
             ? `rgba(255, 255, 255, 0.2)`
             : `rgba(0, 29, 96, 0.1)`};
 `;
-
 
 const InnerItem = styled.div`
     padding: 26px 26px 56px;
@@ -67,15 +67,52 @@ const Overlay = styled.div`
     bottom: 0;
     background-image: ${props =>
         props.theme == "dark" ? darkGradient : lightGradient};
-
-`
+`;
 const TagContainer = styled.div`
     display: flex;
     justify-content: space-between;
-    @media(min-width: 590px) {
+    @media (min-width: 590px) {
         max-width: 230px;
     }
-`
+`;
+
+const WrapWithLink = ({ children, link }) =>
+    link && link.indexOf("http") !== 0 ? (
+        <Link
+            to={link}
+            style={{ display: "block", height: "100%", textDecoration: "none" }}
+        >
+            {children}
+        </Link>
+    ) : link ? (
+        <a
+            href={link}
+            target="_blank"
+            style={{ display: "block", height: "100%", textDecoration: "none" }}
+        >
+            {children}
+        </a>
+    ) : (
+        <div>{children}</div>
+    );
+
+const getDevicePixelRatio = function () {
+    var ratio = 1;
+    // To account for zoom, change to use deviceXDPI instead of systemXDPI
+    if (window.screen.systemXDPI !== undefined && window.screen.logicalXDPI       !== undefined && window.screen.systemXDPI > window.screen.logicalXDPI) {
+        // Only allow for values > 1
+        ratio = window.screen.systemXDPI / window.screen.logicalXDPI;
+    }
+    else if (window.devicePixelRatio !== undefined) {
+        ratio = window.devicePixelRatio;
+    }
+    return ratio;
+};
+const getBackgroundImage = image => {
+    console.log(image ? image.file.url : false);
+    return image ? `url(${image.file.url}?h=${ 512 * getDevicePixelRatio() || 1 }&q=80` : false;
+};
+
 const ItemBase = ({
     link,
     cols,
@@ -87,55 +124,47 @@ const ItemBase = ({
     images
 }) => (
     <Col cols={cols} style={{ padding: "4px" }}>
-        <Link to={link} style={{ display: 'block', height: '100%', textDecoration: "none" }}>
-            <div className={className} style={{position: 'relative'}}>
-            
-                {images.background ? (
-                    <Image
-                        sizes={images.background.responsiveSizes}
-                        // resolutions={images.background.responsiveResolution}
-                        width="100%"
-                        height="100%"
-                        style={{
-                            position: "absolute",
-                            zIndex: 0,
-                            width: "100%",
-                            height: "100%"
-                        }}
-                    />
-                ) : null}
-                <Overlay theme={theme}></Overlay>
+        <WrapWithLink link={link}>
+            <div
+                className={className}
+                style={{
+                    backgroundImage: getBackgroundImage(images.background) || 'https://placehold.it/1800x512',
+                    position: "relative"
+                }}
+            >
+                <Overlay theme={theme} />
                 <InnerItem>
                     <div>
                         <TagContainer>
                             {tag ? <Tag theme={theme}>{tag}</Tag> : null}
-                            {secondary ? <div style={{fontSize: 13}}>{secondary}</div> : null}
+                            {secondary ? (
+                                <div style={{ fontSize: 13 }}>{secondary}</div>
+                            ) : null}
                         </TagContainer>
-                        <Description>
-                            {children}
-                        </Description>
+                        <Description>{children}</Description>
                     </div>
                     <div>
                         {images.image ? (
                             <Image
                                 sizes={images.image.sizes}
                                 style={{
-                                    margin: '0 auto',
+                                    margin: "0 auto",
                                     maxWidth: "200px",
                                     width: "100%"
                                 }}
                                 // resolutions={images.image.resolutions}
-                        />
+                            />
                         ) : null}
                     </div>
                 </InnerItem>
             </div>
-        </Link>
+        </WrapWithLink>
     </Col>
 );
 
 export const Item = styled(ItemBase)`
     background-position: center center;
+    background-size: cover;
     height: 100%;
     min-height: 512px;
     text-decoration: none;
@@ -148,8 +177,12 @@ export const Item = styled(ItemBase)`
         color: inherit;
     }
     &:hover {
-        box-shadow: 0 37.125px 70px -12.125px rgba(0, 0, 0, 0.3);
+        ${props =>
+            props.link
+                ? `box-shadow: 0 37.125px 70px -12.125px rgba(0, 0, 0, 0.3);
         z-index: 1;
+    `
+                : null};
     }
     @media (max-width: 580px) {
         min-height: 0;
