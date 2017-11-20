@@ -87,6 +87,12 @@ export const pageQuery = graphql`
                             src
                             srcSet
                         }
+                        responsiveSizes(maxWidth: 1700, maxHeight: 512, quality: 80) {
+                            aspectRatio
+                            src
+                            srcSet
+                            sizes
+                        }
                     }
                     theme
                     width

@@ -92,8 +92,8 @@ const ItemBase = ({
             
                 {images.background ? (
                     <Image
-                        // sizes={images.background.sizes}
-                        resolutions={images.background.responsiveResolution}
+                        sizes={images.background.responsiveSizes}
+                        // resolutions={images.background.responsiveResolution}
                         width="100%"
                         height="100%"
                         style={{
@@ -144,6 +144,9 @@ export const Item = styled(ItemBase)`
     background-color: ${props => (props.theme == "dark" ? "#333" : "#EBEBEB")};
     position: relative;
     transition: box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    a {
+        color: inherit;
+    }
     &:hover {
         box-shadow: 0 37.125px 70px -12.125px rgba(0, 0, 0, 0.3);
         z-index: 1;
