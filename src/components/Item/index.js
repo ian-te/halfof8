@@ -25,7 +25,7 @@ const Tag = styled.div`
     height: 28px;
     display: inline-flex;
     justify-content: center;
-    align-items: top;
+    align-items: center;
     box-sizing: border-box;
     font-size: 12px;
     font-weight: 500;
