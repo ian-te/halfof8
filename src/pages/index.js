@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
     });
     return (
         <div>
-            <Section bg="#030303" style={{alignItems: 'center', border: '4px solid #FFF'}}>
+            <Section bg="#030303" style={{alignItems: 'top', border: '4px solid #FFF'}}>
                 <Col cols={2}>
                     <Intro
                         phrases={[
