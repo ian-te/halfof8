@@ -82,21 +82,27 @@ export const Intro = styled(IntroBase)`
   text-align: left;
   color: #FFFFFF;
   padding: 26px;
+  margin: 26px 0px;
   box-sizing: content-box;
+
   @media (min-width: 1920px) {
     font-size: 74px;
     margin: 70px 74px;
   }
+
   @media (max-width: 1300px) {
     font-size: 50px;
     min-height: ${1.4 * 3}em;
     margin: 70px 74px;
   }
+
   @media (max-width: 500px) {
     font-size: 38px;
+    margin: 26px 0px;
     line-height: ${1.32}em;
     min-height: ${1.32 * 3} em;
   }
+
   .wrap {
     border-right: 0.08em solid #5261ff;
     padding-right: 10px;
