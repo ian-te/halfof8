@@ -47,14 +47,14 @@ const InnerItem = styled.div`
 
 const lightGradient = `linear-gradient(
     to right,
-    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.6),
     rgba(255, 255, 255, 0.3) 140px,
     rgba(255, 255, 255, 0) 290px
 )`;
 
 const darkGradient = `linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.6),
     rgba(0, 0, 0, 0.3) 140px,
     rgba(0, 0, 0, 0) 290px
 )`;
