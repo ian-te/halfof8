@@ -81,7 +81,7 @@ export const Intro = styled(IntroBase)`
   min-height: ${1.38 * 3}em;
   text-align: left;
   color: #FFFFFF;
-  margin: 26px 30px;
+  margin: 70px 74px;
   padding: 26px;
   box-sizing: content-box;
   @media (min-width: 1920px) {
