@@ -28,6 +28,7 @@ const Sidebar = ({ className }) => (
 
 const SidebarStyled = styled(Sidebar)`
   min-width: 250px;
+  height: 100%;
   position: fixed;
   padding-top: 63px;
   flex-shrink: 0;
