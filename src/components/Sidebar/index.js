@@ -28,12 +28,17 @@ const Sidebar = ({ className }) => (
 
 const SidebarStyled = styled(Sidebar)`
   min-width: 250px;
+  position: fixed;
+  padding-top: 63px;
   flex-shrink: 0;
   flex-grow: 0;
   text-align: center;
   font-size: 13px;
   background-color: #fff;
   line-height: 1.7;
+  @media(max-width: 560px){
+    position: relative;
+  }
   p {
     color: #001d60;
   }
