@@ -133,7 +133,7 @@ const VideoBackground = ({ videoId }) => (
             frameBorder="0"
             height="100%"
             width="100%"
-            src={`https://youtube.com/embed/${videoId}?autoplay=1&controls=0&showinfo=0&autohide=1`}
+            src={`https://youtube.com/embed/${videoId}?autoplay=1&loop=1&modestbranding=1&controls=0&showinfo=0&autohide=1`}
         />
     </div>
 );
