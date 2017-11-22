@@ -108,6 +108,7 @@ const getDevicePixelRatio = function () {
     else if (window.devicePixelRatio !== undefined) {
         ratio = window.devicePixelRatio;
     }
+    if (ratio < 1) ratio = 1;
     return ratio;
 };
 const getBackgroundImage = image => {
