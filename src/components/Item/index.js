@@ -11,7 +11,7 @@ const Description = styled.div`
     h2 {
         font-weight: 400;
         line-height: 1.3;
-        letter-spacing: -0.4px; 
+        letter-spacing: -0.4px;
     }
     p:last-child {
         margin-bottom: 0;
@@ -97,23 +97,46 @@ const WrapWithLink = ({ children, link }) =>
         <div>{children}</div>
     );
 
-const getDevicePixelRatio = function () {
+const getDevicePixelRatio = function() {
     var ratio = 1;
-    if(typeof window === 'undefined') return ratio
+    if (typeof window === "undefined") return ratio;
     // To account for zoom, change to use deviceXDPI instead of systemXDPI
-    if (window.screen.systemXDPI !== undefined && window.screen.logicalXDPI       !== undefined && window.screen.systemXDPI > window.screen.logicalXDPI) {
+    if (
+        window.screen.systemXDPI !== undefined &&
+        window.screen.logicalXDPI !== undefined &&
+        window.screen.systemXDPI > window.screen.logicalXDPI
+    ) {
         // Only allow for values > 1
         ratio = window.screen.systemXDPI / window.screen.logicalXDPI;
-    }
-    else if (window.devicePixelRatio !== undefined) {
+    } else if (window.devicePixelRatio !== undefined) {
         ratio = window.devicePixelRatio;
     }
     if (ratio < 1) ratio = 1;
     return ratio;
 };
 const getBackgroundImage = image => {
-    return image ? `url("${image.file.url}?h=${ 512 * getDevicePixelRatio() || 1 }&q=50")` : false;
+    return image
+        ? `url("${image.file.url}?h=${512 * getDevicePixelRatio() || 1}&q=50")`
+        : false;
 };
+
+const VideoBackground = ({ videoId }) => (
+    <div
+        style={{
+            position: "absolute",
+            zIndex: "0",
+            width: "100%",
+            height: "100%"
+        }}
+    >
+        <iframe
+            frameBorder="0"
+            height="100%"
+            width="100%"
+            src={`https://youtube.com/embed/${videoId}?autoplay=1&controls=0&showinfo=0&autohide=1`}
+        />
+    </div>
+);
 
 const ItemBase = ({
     link,
@@ -123,17 +146,21 @@ const ItemBase = ({
     secondary,
     className,
     theme,
-    images
+    images,
+    backgroundVideoId
 }) => (
     <Col cols={cols} style={{ padding: "4px" }}>
         <WrapWithLink link={link}>
             <div
                 className={className}
                 style={{
-                    backgroundImage: getBackgroundImage(images.background) || 'https://placehold.it/1800x512',
+                    backgroundImage:
+                        getBackgroundImage(images.background) ||
+                        "https://placehold.it/1800x512",
                     position: "relative"
                 }}
             >
+                {backgroundVideoId && <VideoBackground videoId={backgroundVideoId} />}
                 <Overlay theme={theme} />
                 <InnerItem>
                     <div>

@@ -9,14 +9,17 @@ const getLink = node =>
         : node.slug ? "project/" + node.slug : "";
 const IndexPage = ({ data }) => {
     const items = data.allContentfulPortfolioItem.edges;
-    console.log(items)
+    console.log(items);
     const getNodeImages = node => ({
         background: node.indexBackgroundImage,
         image: node.indexImage
     });
     return (
         <div>
-            <Section bg="#030303" style={{alignItems: 'top', border: '4px solid #FFF'}}>
+            <Section
+                bg="#030303"
+                style={{ alignItems: "top", border: "4px solid #FFF" }}
+            >
                 <Col cols={2}>
                     <Intro
                         phrases={[
@@ -32,11 +35,14 @@ const IndexPage = ({ data }) => {
                     tag={items[0].node.tag}
                     link={getLink(items[0].node)}
                     images={getNodeImages(items[0].node)}
+                    backgroundVideoId={items[0].node.backgroundVideoId}
+
                     theme="dark"
                 >
                     <div
                         dangerouslySetInnerHTML={{
-                            __html: items[0].node.shortText.childMarkdownRemark.html
+                            __html:
+                                items[0].node.shortText.childMarkdownRemark.html
                         }}
                     />
                 </Item>
@@ -50,10 +56,12 @@ const IndexPage = ({ data }) => {
                         link={getLink(node)}
                         // background={getBackgroundImage(node)}
                         images={getNodeImages(node)}
+                        backgroundVideoId={node.backgroundVideoId}
+
                         secondary={node.secondaryTag}
                         theme={node.theme ? node.theme : "light"}
                     >
-                        <div
+                       <div
                             dangerouslySetInnerHTML={{
                                 __html: node.shortText.childMarkdownRemark.html
                             }}
@@ -79,6 +87,7 @@ export const pageQuery = graphql`
                     name
                     tag
                     secondaryTag
+                    backgroundVideoId
                     order
                     slug
                     externalUrl
