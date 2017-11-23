@@ -30,7 +30,7 @@ const SidebarStyled = styled(Sidebar)`
   min-width: 250px;
   height: 100%;
   position: fixed;
-  padding-top: 63px;
+  padding-top: 26px;
   flex-shrink: 0;
   flex-grow: 0;
   text-align: center;

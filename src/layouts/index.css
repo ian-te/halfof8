@@ -91,7 +91,8 @@ template {
 }
 a {
   background-color: transparent;
-  -webkit-text-decoration-skip: objects;
+  text-decoration: none;
+  /*-webkit-text-decoration-skip: objects;*/
 }
 a:active,
 a:hover {
@@ -99,7 +100,7 @@ a:hover {
 }
 abbr[title] {
   border-bottom: none;
-  text-decoration: underline;
+  text-decoration: none;
   text-decoration: underline dotted;
 }
 b,
@@ -658,6 +659,8 @@ pre tt:after {
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 }
 
