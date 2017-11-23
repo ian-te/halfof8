@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Col } from "../Section";
 import Link from "gatsby-link";
 import Image from "gatsby-image";
+import VideoBackground from './VideoBackground';
 
 const Description = styled.div`
     max-width: 250px;
@@ -120,29 +121,6 @@ const getBackgroundImage = image => {
         : false;
 };
 
-const VideoBackground = ({ videoId }) => (
-    <div
-        style={{
-            position: "absolute",
-            zIndex: "0",
-            width: "100%",
-            height: "100%",
-            overflow: 'hidden',
-        }}
-    >
-        <iframe
-            frameBorder="0"
-            height="512"
-            width="960"
-            style={{
-                position: 'absolute',
-                left: '50%',
-                marginLeft: -480
-            }}
-            src={`//coub.com/embed/${videoId}?muted=true&noControls=true&noHDControl=true&noSiteButtons=true&autostart=true&originalSize=false&startWithHD=true`}
-        />
-    </div>
-);
 
 const ItemBase = ({
     link,
@@ -166,7 +144,9 @@ const ItemBase = ({
                     position: "relative"
                 }}
             >
-                {backgroundVideoId && <VideoBackground videoId={backgroundVideoId} />}
+                {backgroundVideoId && (
+                    <VideoBackground videoId={backgroundVideoId} />
+                )}
                 <Overlay theme={theme} />
                 <InnerItem>
                     <div>
