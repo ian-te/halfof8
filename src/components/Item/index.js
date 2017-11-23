@@ -193,12 +193,10 @@ export const Item = styled(ItemBase)`
         color: inherit;
     }
     transition: filter 0.3s;
-    filter: saturate(0.5);
     &:hover {
         ${props =>
             props.link
                 ? `
-        filter: saturate(1);
         z-index: 1;
     `
                 : null};
