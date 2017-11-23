@@ -131,7 +131,7 @@ const ItemBase = ({
     className,
     theme,
     images,
-    backgroundVideoId
+    videoBackground
 }) => (
     <Col cols={cols} style={{ padding: "4px" }}>
         <WrapWithLink link={link}>
@@ -144,8 +144,8 @@ const ItemBase = ({
                     position: "relative"
                 }}
             >
-                {backgroundVideoId && (
-                    <VideoBackground videoId={backgroundVideoId} />
+                {videoBackground && (
+                    <VideoBackground videoUrl={videoBackground.file.url} />
                 )}
                 <Overlay theme={theme} />
                 <InnerItem>

@@ -36,7 +36,6 @@ const IndexPage = ({ data }) => {
                     link={getLink(items[0].node)}
                     images={getNodeImages(items[0].node)}
                     backgroundVideoId={items[0].node.backgroundVideoId}
-
                     theme="dark"
                 >
                     <div
@@ -56,12 +55,11 @@ const IndexPage = ({ data }) => {
                         link={getLink(node)}
                         // background={getBackgroundImage(node)}
                         images={getNodeImages(node)}
-                        backgroundVideoId={node.backgroundVideoId}
-
+                        videoBackground={node.videoBackground}
                         secondary={node.secondaryTag}
                         theme={node.theme ? node.theme : "light"}
                     >
-                       <div
+                        <div
                             dangerouslySetInnerHTML={{
                                 __html: node.shortText.childMarkdownRemark.html
                             }}
@@ -87,7 +85,16 @@ export const pageQuery = graphql`
                     name
                     tag
                     secondaryTag
-                    backgroundVideoId
+                    videoBackground {
+                        file {
+                            url
+                            fileName
+                            contentType
+                            details {
+                                size
+                            }
+                        }
+                    }
                     order
                     slug
                     externalUrl
