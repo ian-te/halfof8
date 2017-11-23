@@ -57,6 +57,7 @@ const IndexPage = ({ data }) => {
                         images={getNodeImages(node)}
                         videoBackground={node.videoBackground}
                         secondary={node.secondaryTag}
+                        disableOverlay={node.disableOverlayMask}
                         theme={node.theme ? node.theme : "light"}
                     >
                         <div
@@ -85,6 +86,7 @@ export const pageQuery = graphql`
                     name
                     tag
                     secondaryTag
+                    disableOverlayMask
                     videoBackground {
                         file {
                             url

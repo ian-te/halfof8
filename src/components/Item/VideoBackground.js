@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
 export default class VideoBackground extends React.Component {
     render() {
@@ -15,17 +15,18 @@ export default class VideoBackground extends React.Component {
                     overflow: "hidden"
                 }}
             >
-            <video 
-                autoPlay="true"
-                loop="true"
-                style={{
-                    height: '100%',
-                    position: 'absolute',
-                    width: 1600,
-                    marginLeft: -800,
-                    left: '50%'
-                }}
-                src={videoUrl} />
+                <video
+                    autoPlay="true"
+                    loop="true"
+                    style={{
+                        height: "100%",
+                        position: "absolute",
+                        width: 1600,
+                        marginLeft: -800,
+                        left: "50%"
+                    }}
+                    src={videoUrl}
+                />
             </div>
         );
     }

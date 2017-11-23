@@ -131,7 +131,8 @@ const ItemBase = ({
     className,
     theme,
     images,
-    videoBackground
+    videoBackground,
+    disableOverlay
 }) => (
     <Col cols={cols} style={{ padding: "4px" }}>
         <WrapWithLink link={link}>
@@ -147,7 +148,7 @@ const ItemBase = ({
                 {videoBackground && (
                     <VideoBackground videoUrl={videoBackground.file.url} />
                 )}
-                <Overlay theme={theme} />
+                {!disableOverlay && <Overlay theme={theme} /> }
                 <InnerItem>
                     <div>
                         <TagContainer>
@@ -191,15 +192,19 @@ export const Item = styled(ItemBase)`
     a {
         color: inherit;
     }
+    transition: filter 0.3s;
+    filter: saturate(0.5);
     &:hover {
         ${props =>
             props.link
-                ? `box-shadow: 0 37.125px 70px -12.125px rgba(0, 0, 0, 0.3);
+                ? `
+        filter: saturate(1);
         z-index: 1;
     `
                 : null};
     }
     @media (max-width: 580px) {
         min-height: 0;
+        filter: saturate(1);
     }
 `;
