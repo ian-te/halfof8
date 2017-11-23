@@ -126,14 +126,20 @@ const VideoBackground = ({ videoId }) => (
             position: "absolute",
             zIndex: "0",
             width: "100%",
-            height: "100%"
+            height: "100%",
+            overflow: 'hidden',
         }}
     >
         <iframe
             frameBorder="0"
-            height="100%"
-            width="100%"
-            src={`https://youtube.com/embed/${videoId}?autoplay=1&controls=0&showinfo=0&autohide=1`}
+            height="512"
+            width="960"
+            style={{
+                position: 'absolute',
+                left: '50%',
+                marginLeft: -480
+            }}
+            src={`//coub.com/embed/${videoId}?muted=true&noControls=true&noHDControl=true&noSiteButtons=true&autostart=true&originalSize=false&startWithHD=true`}
         />
     </div>
 );
