@@ -3,7 +3,9 @@ import styled from "styled-components";
 import { Col } from "../Section";
 import Link from "gatsby-link";
 import Image from "gatsby-image";
-import VideoBackground from './VideoBackground';
+import VideoBackground from "./VideoBackground";
+import icon_outer from "./icon_outer.svg";
+import icon_inner from "./icon_inner.svg";
 
 const Description = styled.div`
     max-width: 250px;
@@ -115,12 +117,64 @@ const getDevicePixelRatio = function() {
     if (ratio < 1) ratio = 1;
     return ratio;
 };
+
+const linkType = link =>
+    link ? (link.indexOf("http") === 0 ? "external" : "internal") : false;
+
 const getBackgroundImage = image => {
     return image
         ? `url("${image.file.url}?h=${512 * getDevicePixelRatio() || 1}&q=50")`
         : false;
 };
 
+const HoverOverlay = styled.div`
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s;
+    &:before {
+        position: absolute;
+        opacity: 1;
+        content: "";
+        width: 90px;
+        height: 90px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 90px;
+        left: 50%;
+        top: 50%;
+        background-image: url(${props =>
+            props.type === "external" ? icon_outer : icon_inner});
+        background-repeat: no-repeat;
+        background-position:center center;
+        margin-left: -45px;
+        margin-top: -45px;
+        transform: translate(0, 10px);
+        transition: transform 0.4s;
+    }
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        opacity: 1;
+    }
+    &:hover:before {
+        transform: translate(0, 0);
+    }
+`; 
+const HoverOverlayLink = styled.div`
+    position: relative;
+    top: 80%;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 27px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.2);
+`;
 
 const ItemBase = ({
     link,
@@ -148,7 +202,17 @@ const ItemBase = ({
                 {videoBackground && (
                     <VideoBackground videoUrl={videoBackground.file.url} />
                 )}
-                {!disableOverlay && <Overlay theme={theme} /> }
+                {!disableOverlay && <Overlay theme={theme} />}
+                {link && (
+                    <HoverOverlay type={linkType(link)}>
+                        {linkType(link) === "external" && (
+                            <HoverOverlayLink>
+                                go to<br />
+                                {link.split('//')[1].split('/')[0]}
+                            </HoverOverlayLink>
+                        )}
+                    </HoverOverlay>
+                )}
                 <InnerItem>
                     <div>
                         <TagContainer>
@@ -193,12 +257,10 @@ export const Item = styled(ItemBase)`
         color: inherit;
     }
     transition: filter 0.3s;
-    filter: saturate(0.5);
     &:hover {
         ${props =>
             props.link
                 ? `
-        filter: saturate(1);
         z-index: 1;
     `
                 : null};
