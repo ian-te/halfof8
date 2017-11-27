@@ -1,15 +1,9 @@
 module.exports = {
     siteMetadata: {
-        title: `halfof8`
+        title: `About : Half of Eight`
     },
     // pathPrefix: `/halfof8`,
     plugins: [
-        {
-            resolve: `gatsby-plugin-favicon`,
-            options: {
-                logo:'./src/img/favicon_192x192.png',
-            }
-        },
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-react-helmet`,
         `gatsby-transformer-remark`,
@@ -24,10 +18,10 @@ module.exports = {
             resolve: `gatsby-plugin-nprogress`,
             options: {
                 // Setting a color is optional.
-                color: `#F0A`,
+                color: `#5261ff`,
                 // Disable the loading spinner.
                 showSpinner: true
             }
-        }
+        },
     ]
 };

@@ -59,6 +59,9 @@ export default function Template({ data }) {
             <style>{`body {background-color: ${theme[
                 node.theme || "white"
             ]}}`}</style>
+            <Helmet>
+                <title>{node.name} : Half of Eight</title>
+            </Helmet>
             <BackToHome to="/">&lt; Back to homepage</BackToHome>
             <Content
                 dangerouslySetInnerHTML={{

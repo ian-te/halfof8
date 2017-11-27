@@ -8,7 +8,6 @@
     "gatsby-image": "^1.0.24",
     "gatsby-link": "^1.6.17",
     "gatsby-plugin-catch-links": "^1.0.9",
-    "gatsby-plugin-favicon": "^2.0.0",
     "gatsby-plugin-google-fonts": "^0.0.3",
     "gatsby-plugin-nprogress": "^1.0.7",
     "gatsby-plugin-react-helmet": "^1.0.5",
