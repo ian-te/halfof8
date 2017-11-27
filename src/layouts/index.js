@@ -17,7 +17,7 @@ const TemplateWrapper = ({ children, data }) => (
     >
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Helmet>
-    <div style={{}}>
+    <div >
       <Sidebar />
     </div>
     <div style={{ flexGrow: 1 }}>{children()}</div>
