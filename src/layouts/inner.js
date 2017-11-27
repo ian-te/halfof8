@@ -56,14 +56,13 @@ export default function Template({ data }) {
     if (!node.body) return null;
     return (
         <div>
-            <style>{`body {background-color: ${theme[
-                node.theme || "white"
-            ]}}`}</style>
+            <style>{`body {background-color: ${node.backgroundColor || '#FFF'}}`}</style>
             <Helmet>
                 <title>{node.name} : Half of Eight</title>
             </Helmet>
             <BackToHome to="/">&lt; Back to homepage</BackToHome>
             <Content
+                style={{color: node.textColor || '#000'}}
                 dangerouslySetInnerHTML={{
                     __html: node.body.childMarkdownRemark.html
                 }}
@@ -82,6 +81,8 @@ export const pageQuery = graphql`
                     theme
                     tag
                     secondaryTag
+                    backgroundColor
+                    textColor
                     body {
                         id
                         childMarkdownRemark {
