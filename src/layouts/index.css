@@ -91,12 +91,16 @@ template {
 }
 a {
   background-color: transparent;
+  color: #5261FF;
   text-decoration: none;
   /*-webkit-text-decoration-skip: objects;*/
 }
 a:active,
 a:hover {
   outline-width: 0;
+}
+a:visited {
+  color: #5261FF;
 }
 abbr[title] {
   border-bottom: none;
