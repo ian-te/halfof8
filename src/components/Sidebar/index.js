@@ -2,12 +2,7 @@ import React from 'react'
 import Logo from './logo'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
-
-const MobileHide = styled.div`
-  @media (max-width: 560px) {
-    display: none;
-  }
-`
+import {MobileHide} from '../MobileHide'
 
 const Sidebar = ({ className }) => (
   <div className={className}>

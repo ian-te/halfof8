@@ -2,6 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
+import {MobileShow} from '../components/MobileHide'
 
 const Content = styled.div`
     padding-top: 37px;
@@ -53,7 +54,7 @@ const theme = {
 
 export default function Template({ data, transition }) {
     const node = data.allContentfulPortfolioItem.edges[0].node;
-    console.log(transition)
+    console.log(transition);
     if (!node.body) return null;
     return (
         <div style={transition && transition.style}>
@@ -69,6 +70,11 @@ export default function Template({ data, transition }) {
                     __html: node.body.childMarkdownRemark.html
                 }}
             />
+            <MobileShow>
+                <p style={{textAlign: 'center'}}>
+                    <Link to="/">&lt; back to home page</Link>
+                </p>
+            </MobileShow>
         </div>
     );
 }

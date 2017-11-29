@@ -4,28 +4,34 @@ import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import Sidebar from "../components/Sidebar";
 import Layout from "./layout";
+import Footer from "../components/Footer";
 import "./index.css";
 
 const TemplateWrapper = ({ children, data }) => (
-    <Layout>
-        <Helmet
-            title={data ? data.site.siteMetadata.title : "halfof8"}
-            meta={[
-                { name: "description", content: "Half of Eight" },
-                { name: "keywords", content: "" }
-            ]}
-        >
-            <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1"
-            />
-        </Helmet>
-        <div>
-            <Sidebar />
-            {console.log(data)}
-        </div>
-        <div style={{ flexGrow: 1 }}>{children()}</div>
-    </Layout>
+    <div>
+        <Layout>
+            <Helmet
+                title={data ? data.site.siteMetadata.title : "halfof8"}
+                meta={[
+                    { name: "description", content: "Half of Eight" },
+                    { name: "keywords", content: "" }
+                ]}
+            >
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
+            </Helmet>
+            <div>
+                <Sidebar />
+                {console.log(data)}
+            </div>
+            <div style={{ flexGrow: 1 }}>
+                {children()}
+                <Footer />
+            </div>
+        </Layout>
+    </div>
 );
 
 TemplateWrapper.propTypes = {

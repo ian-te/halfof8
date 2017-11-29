@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 export default class VideoBackground extends React.Component {
+    isMobile(){
+        return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))
+    }
     render() {
         const { videoUrl } = this.props;
         return (
@@ -15,7 +18,8 @@ export default class VideoBackground extends React.Component {
                     overflow: "hidden"
                 }}
             >
-                <video
+
+                {!this.isMobile() && <video
                     autoPlay="true"
                     loop="true"
                     style={{
@@ -26,7 +30,7 @@ export default class VideoBackground extends React.Component {
                         left: "50%"
                     }}
                     src={videoUrl}
-                />
+                />}
             </div>
         );
     }
