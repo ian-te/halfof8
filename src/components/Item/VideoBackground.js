@@ -3,8 +3,7 @@ import ReactDOM from "react-dom";
 
 export default class VideoBackground extends React.Component {
     isMobile(){
-        if(typeof window !== 'undefined') return false
-        if(!window.navigator) return false
+        if(typeof window === 'undefined') return false
         return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))
     }
     render() {
