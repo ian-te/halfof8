@@ -9,7 +9,7 @@ const Content = styled.div`
     line-height: 1.86;
     section,
     header {
-        display:  flex;
+        display: flex;
         flex-wrap: wrap;
         margin-bottom: 92px;
     }
@@ -27,7 +27,7 @@ const Content = styled.div`
             }
         }
     }
-    header > div{
+    header > div {
         width: 25%;
         flex: 0 0 auto;
     }
@@ -51,18 +51,20 @@ const theme = {
     }
 };
 
-export default function Template({ data }) {
+export default function Template({ data, transition }) {
     const node = data.allContentfulPortfolioItem.edges[0].node;
+    console.log(transition)
     if (!node.body) return null;
     return (
-        <div>
-            <style>{`body {background-color: ${node.backgroundColor || '#FFF'}}`}</style>
+        <div style={transition && transition.style}>
+            <style>{`body {background-color: ${node.backgroundColor ||
+                "#FFF"}}`}</style>
             <Helmet>
                 <title>{node.name} : Half of Eight</title>
             </Helmet>
             <BackToHome to="/">&lt; Back to homepage</BackToHome>
             <Content
-                style={{color: node.textColor || '#000'}}
+                style={{ color: node.textColor || "#000" }}
                 dangerouslySetInnerHTML={{
                     __html: node.body.childMarkdownRemark.html
                 }}

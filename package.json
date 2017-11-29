@@ -16,6 +16,8 @@
     "gatsby-source-filesystem": "^1.5.5",
     "gatsby-transformer-remark": "^1.7.20",
     "gatsby-transformer-yaml": "^1.5.11",
+    "react-move": "^2.6.0",
+    "react-transition-group": "^2.2.1",
     "react-typing-animation": "^1.1.5",
     "styled-components": "^2.2.1"
   },

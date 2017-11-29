@@ -7,14 +7,15 @@ const getLink = node =>
     node.externalUrl
         ? node.externalUrl
         : node.slug ? "project/" + node.slug : "";
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, transition }) => {
     const items = data.allContentfulPortfolioItem.edges;
+    console.log('transition should load', transition)
     const getNodeImages = node => ({
         background: node.indexBackgroundImage,
         image: node.indexImage
     });
     return (
-        <div>
+        <div style={transition && transition.style}>
             <Section
                 bg="#030303"
                 style={{ alignItems: "top", border: "4px solid #FFF" }}
