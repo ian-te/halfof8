@@ -7,11 +7,12 @@ import Layout from "./layout";
 import Footer from "../components/Footer";
 import "./index.css";
 
-const TemplateWrapper = ({ children, data }) => (
+
+const TemplateWrapper = (props) => (
     <div>
         <Layout>
             <Helmet
-                title={data ? data.site.siteMetadata.title : "halfof8"}
+                title={props.data ? props.data.site.siteMetadata.title : "halfof8"}
                 meta={[
                     { name: "description", content: "Half of Eight" },
                     { name: "keywords", content: "" }
@@ -24,10 +25,9 @@ const TemplateWrapper = ({ children, data }) => (
             </Helmet>
             <div>
                 <Sidebar />
-                {console.log(data)}
             </div>
             <div style={{ flexGrow: 1 }}>
-                {children()}
+                {props.children()}
                 <Footer />
             </div>
         </Layout>

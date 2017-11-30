@@ -22,6 +22,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                             node {
                                 id
                                 slug
+                                backgroundColor
+                                textColor
                             }
                         }
                     }
@@ -40,6 +42,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                 // Gatsby uses Redux to manage its internal state.
                 // Plugins and sites can use functions like "createPage"
                 // to interact with Gatsby.
+                const { id, backgroundColor, textColor } = edge.node;
                 createPage({
                     // Each page is required to have a `path` as well
                     // as a template component. The `context` is
@@ -47,10 +50,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     // can query data specific to each page.
                     path: `/project/${edge.node.slug ? edge.node.slug : edge.node.id}/`,
                     component: slash(productTemplate),
+                    layout: 'empty',
                     context: {
-                        id: edge.node.id
+                        id, 
+                        backgroundColor,
+                        textColor
                     }
-                });
+                })
             });
             resolve();
         });

@@ -12,7 +12,6 @@ const LayoutStyled = styled(Layout)`
   & > div:first-child {
     width: 20%;
     min-width: 250px;
-    margin-right: 20px;
   }
   @media (max-width: 580px) {
     display: block;

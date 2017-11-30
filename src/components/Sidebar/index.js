@@ -4,10 +4,10 @@ import styled from 'styled-components'
 import Link from 'gatsby-link'
 import {MobileHide} from '../MobileHide'
 
-const Sidebar = ({ className }) => (
+const Sidebar = ({ className, color, bgColor }) => (
   <div className={className}>
     <Link to="/">
-      <Logo fill="#000" hoverfill="#0000FF" />
+      <Logo fill={color || "#000"} hoverfill={color ? '#CCC' : "#0000FF"} />
     </Link>
     <MobileHide>
       <p>contact me via</p>
@@ -30,13 +30,18 @@ const SidebarStyled = styled(Sidebar)`
   flex-grow: 0;
   text-align: center;
   font-size: 13px;
-  background-color: #fff;
+  background-color: ${props => props.bgColor ? props.bgColor : '#fff'};
   line-height: 1.7;
+  p {
+    color: ${props => props.color ? props.color : '#001d60'};
+  }
+  ${props => props.color ?
+  `a{
+    color ${props.color}
+  }`
+  : ''}
   @media(max-width: 560px){
     position: relative;
-  }
-  p {
-    color: #001d60;
   }
 `
 

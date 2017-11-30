@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import {MobileShow} from '../MobileHide'
+import {MobileShow, MobileHide} from '../MobileHide'
 import Link from "gatsby-link";
 
 const FooterBase = ({ className }) => (
+    <MobileShow>
     <div className={className}>
         <p>contact me via</p>
         <p>
@@ -13,6 +14,7 @@ const FooterBase = ({ className }) => (
             <a href="https://instagram.com/halfof8">instagram</a>
         </p>
     </div>
+    </MobileShow>
 );
 
 const FooterStyled = styled(FooterBase)`
