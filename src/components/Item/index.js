@@ -12,8 +12,8 @@ const Description = styled.div`
     margin-top: 56px;
     box-sizing: border-box;
     h2 {
-        font-weight: 400;
-        line-height: 1.3;
+        font-weight: 300;
+        line-height: 1.4;
         letter-spacing: -0.4px;
     }
     p:last-child {
