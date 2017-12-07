@@ -7,15 +7,14 @@ const getLink = node =>
     node.externalUrl
         ? node.externalUrl
         : node.slug ? "project/" + node.slug : "";
-const IndexPage = ({ data, transition }) => {
+const IndexPage = ({ data }) => {
     const items = data.allContentfulPortfolioItem.edges;
-    console.log('transition should load', transition)
     const getNodeImages = node => ({
         background: node.indexBackgroundImage,
         image: node.indexImage
     });
     return (
-        <div style={transition && transition.style}>
+        <div >
             <Section
                 bg="#030303"
                 style={{ alignItems: "top", border: "4px solid #FFF" }}
@@ -30,21 +29,21 @@ const IndexPage = ({ data, transition }) => {
                         ]}
                     />
                 </Col>
-                <Item
-                    cols={2}
-                    tag={items[0].node.tag}
-                    link={getLink(items[0].node)}
-                    images={getNodeImages(items[0].node)}
-                    backgroundVideoId={items[0].node.backgroundVideoId}
-                    theme="dark"
-                >
-                    <div
-                        dangerouslySetInnerHTML={{
-                            __html:
-                                items[0].node.shortText.childMarkdownRemark.html
-                        }}
-                    />
-                </Item>
+                    <Item
+                        cols={2}
+                        tag={items[0].node.tag}
+                        link={getLink(items[0].node)}
+                        images={getNodeImages(items[0].node)}
+                        backgroundVideoId={items[0].node.backgroundVideoId}
+                        theme="dark"
+                    >
+                        <div
+                            dangerouslySetInnerHTML={{
+                                __html:
+                                    items[0].node.shortText.childMarkdownRemark.html
+                            }}
+                        />
+                    </Item>
             </Section>
             <Section>
                 {items.filter((edge, key) => key !== 0).map(({ node }, key) => (
