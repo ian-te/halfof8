@@ -7,7 +7,7 @@ const Layout = ({ className, children }) => (
 
 const LayoutStyled = styled(Layout)`
   display: flex;
-  max-width: 1960px;
+  max-width: 1920px;
   margin: 0 auto;
   & > div:first-child {
     width: 20%;
