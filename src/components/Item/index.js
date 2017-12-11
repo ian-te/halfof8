@@ -6,7 +6,6 @@ import Image from "gatsby-image";
 import VideoBackground from "./VideoBackground";
 import icon_outer from "./icon_outer.svg";
 import icon_inner from "./icon_inner.svg";
-import withScrollReveal from 'react-scrollreveal'
 
 const Description = styled.div`
     max-width: 250px;
