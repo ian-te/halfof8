@@ -6,7 +6,7 @@ import Image from "gatsby-image";
 import VideoBackground from "./VideoBackground";
 import icon_outer from "./icon_outer.svg";
 import icon_inner from "./icon_inner.svg";
-import { Fade } from "react-reveal";
+import withScrollReveal from 'react-scrollreveal'
 
 const Description = styled.div`
     max-width: 250px;
@@ -151,7 +151,7 @@ const HoverOverlay = styled.div`
         background-image: url(${props =>
             props.type === "external" ? icon_outer : icon_inner});
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position:center center;
         margin-left: -45px;
         margin-top: -45px;
         transform: translate(0, 10px);
@@ -164,7 +164,7 @@ const HoverOverlay = styled.div`
     &:hover:before {
         transform: translate(0, 0);
     }
-`;
+`; 
 const HoverOverlayLink = styled.div`
     position: relative;
     top: 80%;
@@ -190,60 +190,57 @@ const ItemBase = ({
     disableOverlay
 }) => (
     <Col cols={cols} style={{ padding: "4px" }}>
-        <Fade duration={500} delay={0} fraction={0.01}>
-            <WrapWithLink link={link}>
-                <div
-                    className={className}
-                    style={{
-                        backgroundImage:
-                            getBackgroundImage(images.background) ||
-                            "https://placehold.it/1800x512",
-                        position: "relative"
-                    }}
-                >
-                    {videoBackground && (
-                        <VideoBackground videoUrl={videoBackground.file.url} />
-                    )}
-                    {!disableOverlay && <Overlay theme={theme} />}
-                    {link && (
-                        <HoverOverlay type={linkType(link)}>
-                            {linkType(link) === "external" && (
-                                <HoverOverlayLink>
-                                    go to<br />
-                                    {link.split("//")[1].split("/")[0]}
-                                </HoverOverlayLink>
-                            )}
-                        </HoverOverlay>
-                    )}
-                    <InnerItem>
-                        <div>
-                            <TagContainer>
-                                {tag ? <Tag theme={theme}>{tag}</Tag> : null}
-                                {secondary ? (
-                                    <div style={{ fontSize: 13 }}>
-                                        {secondary}
-                                    </div>
-                                ) : null}
-                            </TagContainer>
-                            <Description>{children}</Description>
-                        </div>
-                        <div>
-                            {images.image && images.image.sizes ? (
-                                <Image
-                                    sizes={images.image.sizes}
-                                    style={{
-                                        margin: "0 auto",
-                                        maxWidth: "200px",
-                                        width: "100%"
-                                    }}
-                                    // resolutions={images.image.resolutions}
-                                />
+        
+        <WrapWithLink link={link}>
+            <div
+                className={className}
+                style={{
+                    backgroundImage:
+                        getBackgroundImage(images.background) ||
+                        "https://placehold.it/1800x512",
+                    position: "relative"
+                }}
+            >
+                {videoBackground && (
+                    <VideoBackground videoUrl={videoBackground.file.url} />
+                )}
+                {!disableOverlay && <Overlay theme={theme} />}
+                {link && (
+                    <HoverOverlay type={linkType(link)}>
+                        {linkType(link) === "external" && (
+                            <HoverOverlayLink>
+                                go to<br />
+                                {link.split('//')[1].split('/')[0]}
+                            </HoverOverlayLink>
+                        )}
+                    </HoverOverlay>
+                )}
+                <InnerItem>
+                    <div>
+                        <TagContainer>
+                            {tag ? <Tag theme={theme}>{tag}</Tag> : null}
+                            {secondary ? (
+                                <div style={{ fontSize: 13 }}>{secondary}</div>
                             ) : null}
-                        </div>
-                    </InnerItem>
-                </div>
-            </WrapWithLink>
-        </Fade>
+                        </TagContainer>
+                        <Description>{children}</Description>
+                    </div>
+                    <div>
+                        {images.image && images.image.sizes ? (
+                            <Image
+                                sizes={images.image.sizes}
+                                style={{
+                                    margin: "0 auto",
+                                    maxWidth: "200px",
+                                    width: "100%"
+                                }}
+                                // resolutions={images.image.resolutions}
+                            />
+                        ) : null}
+                    </div>
+                </InnerItem>
+            </div>
+        </WrapWithLink>
     </Col>
 );
 
@@ -255,8 +252,7 @@ export const Item = styled(ItemBase)`
     text-decoration: none;
     color: ${props => (props.theme == "dark" ? "#FFF" : "#001d60")};
     box-sizing: border-box;
-    background-color: ${props =>
-        props.theme == "dark" ? "#030303" : "#EBEBEB"};
+    background-color: ${props => (props.theme == "dark" ? "#030303" : "#EBEBEB")};
     position: relative;
     transition: box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     a {
