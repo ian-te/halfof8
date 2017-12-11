@@ -48,8 +48,10 @@ const IndexPage = ({ data }) => {
         type: "widget"
     }));
     const tiles = items
+        .filter((edge, key) => edge.node.order != 1)
         .concat(widgets)
-        .sort((prev, next) => next.node.order - next.node.order);
+        .sort((prev, next) => prev.node.order - next.node.order);
+    console.log("tiles");
 
     return (
         <div>
@@ -84,9 +86,7 @@ const IndexPage = ({ data }) => {
                 </Item>
             </Section>
             <Section>
-                {tiles
-                    .filter((edge, key) => key !== 0)
-                    .map((edge, key) => getTileComponent(edge, key))}
+                {tiles.map((edge, key) => getTileComponent(edge, key))}
             </Section>
         </div>
     );
