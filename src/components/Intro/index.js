@@ -56,10 +56,10 @@ class IntroBase extends React.Component {
     new TxtType(this.el, this.phrases, 2000)
   }
   phrases = [
-    'Art&nbsp;Direction, Software UX, Layouts',
+    'Visuals, Software UX,Layouts',
     'Interaction, Empathy, Engagement',
     'Digital, Geometry, Environment',
-    'Visuals, Emotion, Language',
+    'Strategy, Emotion, Language',
   ]
   render() {
     return (
@@ -74,7 +74,8 @@ class IntroBase extends React.Component {
 }
 
 export const Intro = styled(IntroBase)`
-  font-size: 4.3vw;
+  font-family: 'Space Mono', monospace;
+  font-size: 4.2vw;
   word-break: keep-all;
   font-weight: 300;
   line-height: ${1.38};
@@ -87,13 +88,13 @@ export const Intro = styled(IntroBase)`
 
   @media (min-width: 1920px) {
     font-size: 74px;
-    margin: 70px 74px;
+    margin: 72px 60px;
   }
 
   @media (max-width: 1300px) {
     font-size: 50px;
     min-height: ${1.4 * 3}em;
-    margin: 70px 74px;
+    margin: 72px 60px;
   }
 
   @media (max-width: 500px) {

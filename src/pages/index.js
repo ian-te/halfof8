@@ -60,10 +60,10 @@ const IndexPage = ({ data, transition }) => {
                 <Col cols={2}>
                     <Intro
                         phrases={[
-                            "Art_Direction, Software_UX, Layouts",
+                            "Visuals, Software_UX, Layouts",
                             "Interaction, Empathy, Engagement",
                             "Digital, Geometry, Environment",
-                            "Visuals, Emotion, Language"
+                            "Strategy, Emotion, Language"
                         ]}
                     />
                 </Col>
