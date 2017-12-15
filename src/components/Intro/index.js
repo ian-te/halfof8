@@ -74,7 +74,8 @@ class IntroBase extends React.Component {
 }
 
 export const Intro = styled(IntroBase)`
-  font-size: 4.3vw;
+  font-family: 'Space Mono', monospace;
+  font-size: 4.2vw;
   word-break: keep-all;
   font-weight: 300;
   line-height: ${1.38};
