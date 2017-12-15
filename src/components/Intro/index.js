@@ -88,13 +88,13 @@ export const Intro = styled(IntroBase)`
 
   @media (min-width: 1920px) {
     font-size: 74px;
-    margin: 70px 74px;
+    margin: 72px 60px;
   }
 
   @media (max-width: 1300px) {
     font-size: 50px;
     min-height: ${1.4 * 3}em;
-    margin: 70px 74px;
+    margin: 72px 60px;
   }
 
   @media (max-width: 500px) {
