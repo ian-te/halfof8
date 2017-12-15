@@ -52,7 +52,7 @@ const IndexPage = ({ data, transition }) => {
         .sort((prev, next) => prev.node.order - next.node.order);
 
     return (
-        <div style={transition && transition.style}>
+        <div>
             <Section
                 bg="#030303"
                 style={{ alignItems: "top", border: "4px solid #FFF" }}

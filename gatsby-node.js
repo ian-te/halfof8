@@ -50,6 +50,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     // can query data specific to each page.
                     path: `/project/${edge.node.slug ? edge.node.slug : edge.node.id}/`,
                     component: slash(productTemplate),
+                    layout: 'empty',
                     context: {
                         id, 
                         backgroundColor,

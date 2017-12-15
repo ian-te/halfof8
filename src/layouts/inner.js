@@ -57,7 +57,6 @@ const theme = {
 export default function Template({ data, transition }) {
     const node = data.allContentfulPortfolioItem.edges[0].node;
     if (!node.body) return null;
-    console.log(transition);
     return (
         <div style={transition && transition.style}>
             <Layout>
