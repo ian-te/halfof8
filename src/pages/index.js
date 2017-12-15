@@ -37,8 +37,7 @@ const getTileComponent = (edge, key) => {
         );
     if (edge.type == "widget") return <Widget {...edge.node} />;
 };
-const IndexPage = ({ data }) => {
-    console.log(data);
+const IndexPage = ({ data, transition }) => {
     const items = data.allContentfulPortfolioItem.edges.map(edge => ({
         ...edge,
         type: "item"
@@ -51,10 +50,9 @@ const IndexPage = ({ data }) => {
         .filter((edge, key) => edge.node.order != 1)
         .concat(widgets)
         .sort((prev, next) => prev.node.order - next.node.order);
-    console.log("tiles");
 
     return (
-        <div>
+        <div style={transition && transition.style}>
             <Section
                 bg="#030303"
                 style={{ alignItems: "top", border: "4px solid #FFF" }}

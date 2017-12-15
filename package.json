@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "halfof8.com",
+  "description": "Half of Eight website",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "",
   "dependencies": {
     "gatsby": "^1.9.45",
     "gatsby-image": "^1.0.24",

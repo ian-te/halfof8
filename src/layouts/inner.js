@@ -2,9 +2,9 @@ import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import {MobileShow} from '../components/MobileHide'
-import Layout from './layout'
-import Sidebar from '../components/Sidebar'
+import { MobileShow } from "../components/MobileHide";
+import Layout from "./layout";
+import Sidebar from "../components/Sidebar";
 
 const Content = styled.div`
     padding-top: 37px;
@@ -54,34 +54,43 @@ const theme = {
     }
 };
 
-export default function Template({ data }) {
+export default function Template({ data, transition }) {
     const node = data.allContentfulPortfolioItem.edges[0].node;
     if (!node.body) return null;
+    console.log(transition);
     return (
-        <Layout>
-            <div>
-                <style dangerouslySetInnerHTML={{__html: `body{background-color: ${node.backgroundColor}}`}}>
-                </style>
-                <Sidebar color={node.textColor} bgColor={node.backgroundColor} />
-            </div>
-            <div style={{ flexGrow: 1 }}>
-                <Helmet>
-                    <title>{node.name} : Half of Eight</title>
-                </Helmet>
-                <BackToHome to="/">&lt; Back to homepage</BackToHome>
-                <Content
-                    style={{ color: node.textColor || "#000" }}
-                    dangerouslySetInnerHTML={{
-                        __html: node.body.childMarkdownRemark.html
-                    }}
-                />
-                <MobileShow>
-                    <p style={{textAlign: 'center'}}>
-                        <Link to="/">&lt; back to home page</Link>
-                    </p>
-                </MobileShow>
-            </div>
-        </Layout>
+        <div style={transition && transition.style}>
+            <Layout>
+                <div>
+                    <style
+                        dangerouslySetInnerHTML={{
+                            __html: `body{background-color: ${node.backgroundColor}}`
+                        }}
+                    />
+                    <Sidebar
+                        color={node.textColor}
+                        bgColor={node.backgroundColor}
+                    />
+                </div>
+                <div style={{ flexGrow: 1 }}>
+                    <Helmet>
+                        <title>{node.name} : Half of Eight</title>
+                    </Helmet>
+                    <BackToHome to="/">&lt; Back to homepage</BackToHome>
+                    <Content
+                        style={{ color: node.textColor || "#000" }}
+                        dangerouslySetInnerHTML={{
+                            __html: node.body.childMarkdownRemark.html
+                        }}
+                    />
+                    <MobileShow>
+                        <p style={{ textAlign: "center" }}>
+                            <Link to="/">&lt; back to home page</Link>
+                        </p>
+                    </MobileShow>
+                </div>
+            </Layout>
+        </div>
     );
 }
 
