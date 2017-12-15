@@ -56,10 +56,10 @@ class IntroBase extends React.Component {
     new TxtType(this.el, this.phrases, 2000)
   }
   phrases = [
-    'Art&nbsp;Direction, Software UX, Layouts',
+    'Visuals, Software UX,Layouts',
     'Interaction, Empathy, Engagement',
     'Digital, Geometry, Environment',
-    'Visuals, Emotion, Language',
+    'Strategy, Emotion, Language',
   ]
   render() {
     return (
