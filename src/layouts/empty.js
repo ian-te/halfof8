@@ -11,7 +11,6 @@ import "./index.css";
 const TemplateWrapper = (props) => (
     <div>
         {props.children()}
-        <Footer />
     </div>
 );
 

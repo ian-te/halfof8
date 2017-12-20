@@ -26,7 +26,6 @@ class ReplaceComponentRenderer extends React.Component {
     super(props)
     this.state = { exiting: false, nextPageResources: {} }
     this.listenerHandler = this.listenerHandler.bind(this)
-    console.log(props, this.state, this.listenerHandler)
   }
 
   listenerHandler(event) {

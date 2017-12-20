@@ -5,6 +5,9 @@ import Link from "gatsby-link";
 import { MobileShow } from "../components/MobileHide";
 import Layout from "./layout";
 import Sidebar from "../components/Sidebar";
+import Button from "../components/Button";
+import Footer from "../components/Footer";
+import ButtonContainer from "../components/ButtonContainer";
 
 const Content = styled.div`
     padding-top: 37px;
@@ -54,7 +57,7 @@ const theme = {
     }
 };
 
-export default function Template({ data, transition }) {
+export default function Template({ data, transition, pathContext }) {
     const node = data.allContentfulPortfolioItem.edges[0].node;
     if (!node.body) return null;
     return (
@@ -82,11 +85,28 @@ export default function Template({ data, transition }) {
                             __html: node.body.childMarkdownRemark.html
                         }}
                     />
-                    <MobileShow>
-                        <p style={{ textAlign: "center" }}>
-                            <Link to="/">&lt; back to home page</Link>
-                        </p>
-                    </MobileShow>
+                    <ButtonContainer>
+                        <Button
+                            color={node.textColor}
+                            to={`project/${pathContext.prev.node.slug}`} 
+                            icon="arrow"
+                            >
+                            prev project
+                        </Button>
+                        <Button
+                            color={node.textColor}
+                            width="50%"
+                            icon="home"
+                            to="/" >
+                            to home page
+                        </Button>
+                        <Button
+                            color={node.textColor}
+                            to={`project/${pathContext.next.node.slug}`} >
+                            next project
+                        </Button>
+                    </ButtonContainer>
+                    <Footer />
                 </div>
             </Layout>
         </div>

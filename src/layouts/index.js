@@ -4,15 +4,18 @@ import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import Sidebar from "../components/Sidebar";
 import Layout from "./layout";
+import ButtonContainer from "../components/ButtonContainer";
+import Button from "../components/Button";
 import Footer from "../components/Footer";
 import "./index.css";
 
-
-const TemplateWrapper = (props) => (
+const TemplateWrapper = props => (
     <div>
         <Layout>
             <Helmet
-                title={props.data ? props.data.site.siteMetadata.title : "halfof8"}
+                title={
+                    props.data ? props.data.site.siteMetadata.title : "halfof8"
+                }
                 meta={[
                     { name: "description", content: "Half of Eight" },
                     { name: "keywords", content: "" }

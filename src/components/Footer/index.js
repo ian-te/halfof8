@@ -4,22 +4,21 @@ import {MobileShow, MobileHide} from '../MobileHide'
 import Link from "gatsby-link";
 
 const FooterBase = ({ className }) => (
-    <MobileShow>
     <div className={className}>
-        <p>contact me via</p>
-        <p>
-            <a href="mailto:jetixc@gmail.com">jetixc@gmail.com</a>
-            <br />
-            <a href="https://fb.com/stayswim">fb</a>{" "}
-            <a href="https://instagram.com/halfof8">instagram</a>
-        </p>
+        <p>&copy; 2012 – {new Date().getFullYear()}, Anton Sokolov, Half of Eight</p>
     </div>
-    </MobileShow>
 );
 
 const FooterStyled = styled(FooterBase)`
-    padding-top: 20px;
+    padding-top: 70px;
+    padding-bottom: 70px;
     text-align: center;
+
+    font-size: 13px;
+    line-height: 1.85;
+    letter-spacing: normal;
+    text-align: center;
+    color: #001d60;
 `
 
 export default FooterStyled;
