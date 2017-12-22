@@ -31,6 +31,19 @@ const TemplateWrapper = props => (
             </div>
             <div style={{ flexGrow: 1 }}>
                 {props.children()}
+                <ButtonContainer>
+                    <Button
+                        width="50%"
+                        icon="home"
+                    >
+                        to home page
+                    </Button>
+                    <Button
+                        icon="up"
+                    >
+                        next project
+                    </Button>
+                </ButtonContainer>
                 <Footer />
             </div>
         </Layout>

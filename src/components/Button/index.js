@@ -15,14 +15,11 @@ const StyledButton = styled.div`
     justify-content: center;
     align-content: center;
     flex-direction: column;
+    box-sizing: border-box;
     position: relative;
+    padding: 5px 10px;
 `;
 
-const StyledIcon = styled.div`
-    position: absolute;
-    left: 10px;
-    top: 10px;
-`
 
 export default ({ icon, to, onClick, children, color, width='25%' }) => { 
     const Icon = IconContainer(icon);

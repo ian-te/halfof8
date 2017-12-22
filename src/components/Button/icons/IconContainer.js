@@ -5,24 +5,30 @@ import Home from './home';
 
 const IconContainer = styled.div`
     position: absolute;
-    left: 20px;
+    ${props => props.right ? 'right: 20px;' : 'left: 20px;'}
     top: 50%;
     margin-top: -10px;
     height: 20px;
+    @media(max-width: 1200px) {
+        display: none;
+    }
 `;
 
 
 const icons = { 
-    arrow: Arrow,
-    home: Home
+    prev: Arrow,
+    home: Home,
+    next: Arrow,
+    up: Arrow
 }
 
 export default icon => props => {
     const Icon = icons[icon];
+    console.log(Icon, icons, icon)
     if(!icon) return null;
     return (
-        <IconContainer>
-            <Icon {...props} />
+        <IconContainer right={icon==="next"}>
+            <Icon {...props} up={icon==="up"} right={icon==='next'} />
         </IconContainer>
     );
 };
