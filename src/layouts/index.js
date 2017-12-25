@@ -36,12 +36,12 @@ const TemplateWrapper = props => (
                         width="50%"
                         icon="home"
                     >
-                        to home page
+                        contact me
                     </Button>
                     <Button
                         icon="up"
                     >
-                        next project
+                        go to top 
                     </Button>
                 </ButtonContainer>
                 <Footer />
