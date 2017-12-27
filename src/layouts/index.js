@@ -41,7 +41,7 @@ const TemplateWrapper = props => (
                     </Button>
                     <Button
                         icon="mail"
-                        href='mailto:jetixc@gmail.com'
+                        href='mailto:info@halfof8.com'
                     >
                         contact me 
                     </Button>

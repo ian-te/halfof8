@@ -18,6 +18,7 @@ const StyledButton = styled.div`
     box-sizing: border-box;
     position: relative;
     padding: 5px 10px;
+    cursor: pointer;
 `;
 
 export default props => {
@@ -26,12 +27,10 @@ export default props => {
     switch (true) {
         case typeof onClick !== "undefined":
             return (
-                <a href={href}>
-                    <StyledButton color={color}>
-                        <Icon color={color} />
-                        {children}
-                    </StyledButton>
-                </a>
+                <StyledButton onClick={onClick} color={color}>
+                    <Icon color={color} />
+                    {children}
+                </StyledButton>
             );
         case typeof href !== "undefined":
             return (
