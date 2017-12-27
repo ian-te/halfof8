@@ -5,7 +5,7 @@ import IconContainer from "./icons/IconContainer";
 
 const StyledButton = styled.div`
     height: 82px;
-    border: solid 1px ${props => props.color || "#dcdfff"};
+    border: solid 0px ${props => props.color || "#dcdfff"};
     color: ${props => props.color || "#5261ff"};
     a {
         color: ${props => props.color || "#5261ff"};
