@@ -12,7 +12,7 @@ const Sidebar = ({ className, color, bgColor }) => (
     <MobileHide>
       <p>contact me via</p>
       <p>
-        <a href="mailto:jetixc@gmail.com">jetixc@gmail.com</a>
+        <a href="mailto:info@halfof8.com">info@halfof8.com</a>
         <br />
         <a href="https://fb.com/stayswim">fb</a>{' '}
         <a href="https://instagram.com/halfof8">instagram</a>
