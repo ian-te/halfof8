@@ -14,16 +14,22 @@ const TemplateWrapper = props => (
         <Layout>
             <Helmet
                 title={
-                    props.data ? props.data.site.siteMetadata.title : "halfof8"
+                    props.data ? props.data.allContentfulMeta.edges[0].node.title : "halfof8"
                 }
-                meta={[
-                    { name: "description", content: "Half of Eight" },
-                    { name: "keywords", content: "" }
-                ]}
             >
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1"
+                />
+                <meta name="description" content={props.data.allContentfulMeta.edges[0].node.description.childMarkdownRemark.excerpt} />
+                <meta name="keywords" content={props.data.allContentfulMeta.edges[0].node.description.childMarkdownRemark.excerpt} />
+                <meta property="og:title" content={props.data.allContentfulMeta.edges[0].node.title} />
+                <meta
+                    property="og:description"
+                    content={props.data.allContentfulMeta.edges[0].node.description.childMarkdownRemark.excerpt}
+                />
+                <meta property="og:image"
+                    content={props.data.allContentfulMeta.edges[0].node.image.file.url}
                 />
             </Helmet>
             <div>
@@ -35,15 +41,12 @@ const TemplateWrapper = props => (
                     <Button
                         width="50%"
                         icon="up"
-                        onClick={() => window.scrollTo(0,0)}
+                        onClick={() => window.scrollTo(0, 0)}
                     >
                         to the top
                     </Button>
-                    <Button
-                        icon="mail"
-                        href='mailto:info@halfof8.com'
-                    >
-                        contact me 
+                    <Button icon="mail" href="mailto:info@halfof8.com">
+                        contact me
                     </Button>
                 </ButtonContainer>
                 <Footer />
@@ -63,6 +66,25 @@ export const query = graphql`
         site {
             siteMetadata {
                 title
+            }
+        }
+        allContentfulMeta {
+            edges {
+                node {
+                    title
+                    image {
+                        file {
+                            url
+                            fileName
+                            contentType
+                        }
+                    }
+                    description {
+                        childMarkdownRemark {
+                            excerpt
+                        }
+                    }
+                }
             }
         }
     }
