@@ -40,7 +40,7 @@ const TemplateWrapper = props => (
                         to the top
                     </Button>
                     <Button
-                        icon="home"
+                        icon="mail"
                         href='mailto:jetixc@gmail.com'
                     >
                         contact me 
