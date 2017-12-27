@@ -23,6 +23,7 @@ const Sidebar = ({ className, color, bgColor }) => (
 
 const SidebarStyled = styled(Sidebar)`
   min-width: 250px;
+  width: 15.5%;
   height: 100%;
   position: fixed;
   padding-top: 26px;

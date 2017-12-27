@@ -34,14 +34,16 @@ const TemplateWrapper = props => (
                 <ButtonContainer>
                     <Button
                         width="50%"
-                        icon="home"
+                        icon="up"
+                        onClick={() => window.scrollTo(0,0)}
                     >
-                        to home page
+                        to the top
                     </Button>
                     <Button
-                        icon="up"
+                        icon="home"
+                        href='mailto:jetixc@gmail.com'
                     >
-                        next project
+                        contact me 
                     </Button>
                 </ButtonContainer>
                 <Footer />

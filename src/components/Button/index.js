@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import IconContainer from './icons/IconContainer';
+import IconContainer from "./icons/IconContainer";
 
 const StyledButton = styled.div`
     height: 82px;
@@ -20,13 +20,44 @@ const StyledButton = styled.div`
     padding: 5px 10px;
 `;
 
-
-export default ({ icon, to, onClick, children, color, width='25%' }) => { 
+export default props => {
+    const { icon, href, to, onClick, children, color, width = "25%" } = props;
     const Icon = IconContainer(icon);
-    return <Link style={{display: 'block' }} to={to}>
-        <StyledButton color={color}>
-            <Icon color={color} />
-            {children}
-        </StyledButton>
-    </Link>
- };
+    switch (true) {
+        case typeof onClick !== "undefined":
+            return (
+                <a href={href}>
+                    <StyledButton color={color}>
+                        <Icon color={color} />
+                        {children}
+                    </StyledButton>
+                </a>
+            );
+        case typeof href !== "undefined":
+            return (
+                <a href={href}>
+                    <StyledButton color={color}>
+                        <Icon color={color} />
+                        {children}
+                    </StyledButton>
+                </a>
+            );
+        case typeof to !== "undefined":
+            return (
+                <Link to={to}>
+                    <StyledButton color={color}>
+                        <Icon color={color} />
+                        {children}
+                    </StyledButton>
+                </Link>
+            );
+        default:
+            return (
+                <StyledButton color={color}>
+                    <Icon color={color} />
+                    {children}
+                </StyledButton>
+            );
+    }
+    return <Link style={{ display: "block" }} to={to} />;
+};

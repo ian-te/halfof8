@@ -6,7 +6,8 @@ const Layout = ({ className, children }) => (
 )
 
 const LayoutStyled = styled(Layout)`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
   max-width: 1920px;
   margin: 0 auto;
   & > div:first-child {
