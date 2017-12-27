@@ -33,6 +33,7 @@ const SidebarStyled = styled(Sidebar)`
   font-size: 13px;
   background-color: ${props => props.bgColor ? props.bgColor : '#fff'};
   line-height: 1.7;
+  max-width: 320px;
   p {
     color: ${props => props.color ? props.color : '#001d60'};
   }
