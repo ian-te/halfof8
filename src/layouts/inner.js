@@ -13,6 +13,7 @@ const Content = styled.div`
     padding-top: 37px;
     font-size: 14px;
     line-height: 1.86;
+    min-height: 1200px;
     section,
     header {
         display: flex;
