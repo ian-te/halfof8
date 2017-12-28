@@ -26,7 +26,6 @@ const icons = {
 
 export default icon => props => {
     const Icon = icons[icon];
-    console.log(Icon, icons, icon)
     if(!icon) return null;
     return (
         <IconContainer right={icon==="next"}>
