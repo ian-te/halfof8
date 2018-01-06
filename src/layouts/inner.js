@@ -79,7 +79,7 @@ export default function Template({ data, transition, pathContext }) {
                     <Helmet>
                         <title>{node.name} : Half of Eight</title>
                     </Helmet>
-                    <BackToHome to="/">&lt; Back to homepage</BackToHome>
+                    <BackToHome to="/">&lt; to project feed</BackToHome>
                     <Content
                         style={{ color: node.textColor || "#000" }}
                         dangerouslySetInnerHTML={{
@@ -97,9 +97,9 @@ export default function Template({ data, transition, pathContext }) {
                         <Button
                             color={node.textColor}
                             width="50%"
-                            icon="home"
+                            
                             to="/" >
-                            to home page
+                            to project feed
                         </Button>
                         <Button
                             color={node.textColor}
