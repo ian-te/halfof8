@@ -5,14 +5,14 @@ import Link from "gatsby-link";
 
 const FooterBase = ({ className }) => (
     <div className={className}>
-        <p>&copy; 2012 – {new Date().getFullYear()}, Anton Sokolov, Half of Eight</p>
+        <p>&copy; 2012 – {new Date().getFullYear()}, 👋 Car does not move till we are all buckled up</p>
     </div>
 );
 
 const FooterStyled = styled(FooterBase)`
-    padding-top: 70px;
-    padding-bottom: 70px;
-    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    text-align: left;
 
     font-size: 13px;
     line-height: 1.85;
