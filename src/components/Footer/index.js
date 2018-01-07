@@ -10,14 +10,14 @@ const FooterBase = ({ className }) => (
 );
 
 const FooterStyled = styled(FooterBase)`
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 0px;
     text-align: left;
 
     font-size: 13px;
     line-height: 1.85;
     letter-spacing: normal;
-    text-align: center;
+    text-align: left;
     color: #001d60;
 `
 
