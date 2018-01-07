@@ -37,7 +37,7 @@ const TemplateWrapper = props => (
             </div>
             <div style={{ flexGrow: 1 }}>
                 {props.children()}
-                <ButtonContainer>
+                /*<ButtonContainer>
                     <Button
                         width="50%"
                         icon="up"
@@ -48,7 +48,7 @@ const TemplateWrapper = props => (
                     <Button icon="mail" href="mailto:info@halfof8.com">
                         contact me
                     </Button>
-                </ButtonContainer>
+                </ButtonContainer>*/
                 <Footer />
             </div>
         </Layout>
