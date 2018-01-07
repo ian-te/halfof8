@@ -10,13 +10,7 @@ const Sidebar = ({ className, color, bgColor }) => (
       <Logo fill={color || "#000"} hoverfill={color ? '#CCC' : "#0000FF"} />
     </Link>
     <MobileHide>
-      <p>contact me via</p>
-      <p>
-        <a href="mailto:info@halfof8.com">info@halfof8.com</a>
-        <br />
-        <a href="https://fb.com/stayswim">fb</a>{' '}
-        <a href="https://instagram.com/halfof8">instagram</a>
-      </p>
+  
     </MobileHide>
   </div>
 )
