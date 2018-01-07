@@ -7,7 +7,7 @@ const FooterBase = ({ className }) => (
     <div className={className}>
       <p>
       &copy; 2012 – {new Date().getFullYear()}, 
-      👋 Car does not move till we are all buckled up. <a href="mailto:info@halfof8.com">info@halfof8.com</a>, 
+      👋 Car does not move till we are all buckled up, so keep in touch via {' '}<a href="mailto:info@halfof8.com">info@halfof8.com</a>, 
       {' '}<a href="https://fb.com/stayswim">fb</a>, {' '}<a href="https://instagram.com/halfof8">insta</a>
      </p>
     </div>
@@ -15,13 +15,15 @@ const FooterBase = ({ className }) => (
 
 const FooterStyled = styled(FooterBase)`
     padding-top: 20px;
-    padding-bottom: 0px;
-    text-align: left;
+    padding-bottom: 10px;
+    padding-right: 5px;
+    padding-right: 5px;
+    text-align: center;
 
     font-size: 13px;
     line-height: 1.85;
     letter-spacing: normal;
-    text-align: left;
+    text-align: center;
     color: #001d60;
 `
 
