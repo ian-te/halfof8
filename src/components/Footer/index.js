@@ -5,7 +5,11 @@ import Link from "gatsby-link";
 
 const FooterBase = ({ className }) => (
     <div className={className}>
-        <p>&copy; 2012 – {new Date().getFullYear()}, 👋 Car does not move till we are all buckled up</p>
+      <p>
+      &copy; 2012 – {new Date().getFullYear()}, 
+      👋 Car does not move till we are all buckled up. <a href="mailto:info@halfof8.com">info@halfof8.com</a>, 
+      {' '}<a href="https://fb.com/stayswim">fb</a>, {' '}<a href="https://instagram.com/halfof8">insta</a>
+     </p>
     </div>
 );
 
