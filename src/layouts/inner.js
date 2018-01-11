@@ -108,7 +108,7 @@ export default function Template({ data, transition, pathContext }) {
                             next project
                         </Button>
                     </ButtonContainer>}
-                    <Footer />
+                    <Footer color={node.textColor} />
                 </div>
             </Layout>
         </div>
