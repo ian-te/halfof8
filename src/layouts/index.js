@@ -37,18 +37,7 @@ const TemplateWrapper = props => (
             </div>
             <div style={{ flexGrow: 1 }}>
                 {props.children()}
-                <ButtonContainer>
-                    <Button
-                        width="50%"
-                        icon="up"
-                        onClick={() => window.scrollTo(0, 0)}
-                    >
-                        to the top
-                    </Button>
-                    <Button icon="mail" href="mailto:info@halfof8.com">
-                        contact me
-                    </Button>
-                </ButtonContainer>
+                
                 <Footer />
             </div>
         </Layout>

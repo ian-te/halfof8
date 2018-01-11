@@ -156,12 +156,14 @@ const HoverOverlay = styled.div`
         transform: translate(0, 10px);
         transition: transform 0.4s;
     }
-    &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-        opacity: 1;
-    }
-    &:hover:before {
-        transform: translate(0, 0);
+    @media(min-width: 590px){
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+            opacity: 1;
+        }
+        &:hover:before {
+            transform: translate(0, 0);
+        }
     }
 `; 
 const HoverOverlayLink = styled.div`

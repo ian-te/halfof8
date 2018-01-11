@@ -5,13 +5,19 @@ import Link from "gatsby-link";
 
 const FooterBase = ({ className }) => (
     <div className={className}>
-        <p>&copy; 2012 – {new Date().getFullYear()}, Anton Sokolov, Half of Eight</p>
+      <p>
+      &copy; 2012 – {new Date().getFullYear()}, 
+      👋 Car does not move till we are all buckled up, so keep in touch via {' '}<a href="mailto:info@halfof8.com">info@halfof8.com</a>, 
+      {' '}<a href="https://fb.com/stayswim">fb</a>, {' '}<a href="https://instagram.com/halfof8">insta</a>
+     </p>
     </div>
 );
 
 const FooterStyled = styled(FooterBase)`
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-right: 5px;
+    padding-right: 5px;
     text-align: center;
 
     font-size: 13px;

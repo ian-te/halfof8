@@ -57,7 +57,6 @@ const theme = {
         color: "#000"
     }
 };
-
 export default function Template({ data, transition, pathContext }) {
     const node = data.allContentfulPortfolioItem.edges[0].node;
     if (!node.body) return null;
@@ -78,8 +77,13 @@ export default function Template({ data, transition, pathContext }) {
                 <div style={{ flexGrow: 1 }}>
                     <Helmet>
                         <title>{node.name} : Half of Eight</title>
+                        <meta property="og:title" content={`${node.name} : Half of Eight`} />
+                        <meta
+                            property="og:description"
+                            content={node.body.childMarkdownRemark.html.replace(/<(?:.|\n)*?>/gm, '')}
+                        />
                     </Helmet>
-                    <BackToHome to="/">&lt; Back to homepage</BackToHome>
+                    <BackToHome to="/">&lt; to project feed</BackToHome>
                     <Content
                         style={{ color: node.textColor || "#000" }}
                         dangerouslySetInnerHTML={{
@@ -97,9 +101,9 @@ export default function Template({ data, transition, pathContext }) {
                         <Button
                             color={node.textColor}
                             width="50%"
-                            icon="home"
+                            
                             to="/" >
-                            to home page
+                            to project feed
                         </Button>
                         <Button
                             color={node.textColor}
