@@ -93,7 +93,7 @@ export default function Template({ data, transition, pathContext }) {
                     {pathContext.prev && <ButtonContainer>
                         <Button
                             color={node.textColor}
-                            to={`project/${pathContext.prev.node.slug}`} 
+                            to={`/project/${pathContext.prev.node.slug}`} 
                             icon="prev"
                             >
                             prev project
@@ -108,7 +108,7 @@ export default function Template({ data, transition, pathContext }) {
                         <Button
                             color={node.textColor}
                             icon="next"
-                            to={`project/${pathContext.next.node.slug}`} >
+                            to={`/project/${pathContext.next.node.slug}`} >
                             next project
                         </Button>
                     </ButtonContainer>}
