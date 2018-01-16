@@ -31,9 +31,20 @@ const Logo = ({ className }) => (
 
 const StyledLogo = styled(Logo)`
   margin: 20px auto;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 7s linear forwards;
   &:hover {
     fill: ${props => props.hoverfill || '#0F0'};
   }
+&@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 `
 
 export default StyledLogo
