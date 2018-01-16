@@ -1,13 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Logo = ({ fill = '#000', className }) => (
+const Logo = ({ className }) => (
   <svg
     className={className}
     xmlns="http://www.w3.org/2000/svg"
     width="150"
     height="150"
-    viewBox="0 0 150 150"
   >
   
   <g class="path" fill="none" fill-rule="evenodd">
@@ -36,20 +35,6 @@ const StyledLogo = styled(Logo)`
   &:hover {
     fill: ${props => props.hoverfill || '#0F0'};
   }
-.path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: dash 7s linear forwards;
-}
-
-@keyframes dash {
-  from {
-    stroke-dashoffset: 1000;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 `
 
 export default StyledLogo
