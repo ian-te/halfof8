@@ -38,6 +38,11 @@ const Content = styled.div`
         width: 25%;
         flex: 0 0 auto;
     }
+    @media(max-width: 580px) {
+        header> div {
+            width: 100%;
+        }
+    }
 `;
 
 const BackToHome = styled(Link)`
