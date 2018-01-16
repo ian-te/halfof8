@@ -38,7 +38,7 @@ const StyledLogo = styled(Logo)`
   &:hover {
     fill: ${props => props.hoverfill || '#0F0'};
   }
-&@keyframes dash {
+@keyframes dash {
   from {
     stroke-dashoffset: 1000;
   }
