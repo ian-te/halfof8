@@ -98,7 +98,7 @@ export const Intro = styled(IntroBase)`
   }
 
   @media (max-width: 500px) {
-    font-size: 38px;
+    font-size: 35px;
     margin: 26px 0px;
     line-height: ${1.32}em;
     min-height: ${1.32 * 3} em;
