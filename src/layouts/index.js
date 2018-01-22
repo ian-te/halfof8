@@ -29,7 +29,7 @@ const TemplateWrapper = props => (
                     content={props.data.allContentfulMeta.edges[0].node.description.childMarkdownRemark.excerpt}
                 />
                 <meta property="og:image"
-                    content={props.data.allContentfulMeta.edges[0].node.image.file.url}
+                    content={'https://' + props.data.allContentfulMeta.edges[0].node.image.file.url}
                 />
             </Helmet>
             <div>

@@ -212,15 +212,17 @@ class ItemBase extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isVisible: false
+            isVisible: false,
+            isMounted: false
         };
         this.onVisibilityChange = this.onVisibilityChange.bind(this);
     }
-    componentDidMount() {
-        console.log("item", this.props.tag);
+    componentDidMount(){
+        this.setState({isMounted: true})
     }
     onVisibilityChange(isVisible) {
-        this.setState({ isVisible });
+        if(this.state.isMounted)
+            this.setState({ isVisible:true });
     }
     render() {
         const {
