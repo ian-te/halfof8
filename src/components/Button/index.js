@@ -12,6 +12,7 @@ const StyledButton = styled.div`
     }
     text-align: center;
     display: flex;
+    font-size: 12px;
     justify-content: center;
     align-content: center;
     flex-direction: column;
