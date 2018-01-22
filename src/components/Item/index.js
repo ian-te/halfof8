@@ -1,12 +1,12 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Col } from "../Section";
 import Link from "gatsby-link";
 import Image from "gatsby-image";
 import VideoBackground from "./VideoBackground";
 import icon_outer from "./icon_outer.svg";
 import icon_inner from "./icon_inner.svg";
-
+import VisibilitySensor from "react-visibility-sensor";
 const Description = styled.div`
     max-width: 250px;
     margin-top: 56px;
@@ -150,13 +150,13 @@ const HoverOverlay = styled.div`
         background-image: url(${props =>
             props.type === "external" ? icon_outer : icon_inner});
         background-repeat: no-repeat;
-        background-position:center center;
+        background-position: center center;
         margin-left: -45px;
         margin-top: -45px;
         transform: translate(0, 10px);
         transition: transform 0.4s;
     }
-    @media(min-width: 590px){
+    @media (min-width: 590px) {
         &:hover {
             background-color: rgba(0, 0, 0, 0.1);
             opacity: 1;
@@ -165,7 +165,7 @@ const HoverOverlay = styled.div`
             transform: translate(0, 0);
         }
     }
-`; 
+`;
 const HoverOverlayLink = styled.div`
     position: relative;
     top: 80%;
@@ -178,72 +178,140 @@ const HoverOverlayLink = styled.div`
     background-color: rgba(0, 0, 0, 0.2);
 `;
 
-const ItemBase = ({
-    link,
-    cols,
-    children,
-    tag,
-    secondary,
-    className,
-    theme,
-    images,
-    videoBackground,
-    disableOverlay
-}) => (
-    <Col cols={cols} style={{ padding: "4px" }}>
-        
-        <WrapWithLink link={link}>
-            <div
-                className={className}
-                style={{
-                    backgroundImage:
-                        getBackgroundImage(images.background) ||
-                        "https://placehold.it/1800x512",
-                    position: "relative"
-                }}
+const fadeIn = keyframes`
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+`;
+
+const fadeOut = keyframes`
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+`;
+
+const Fade = styled.div`
+    visibility: ${props => (props.out ? "hidden" : "visible")};
+    animation: ${props => (props.out ? fadeOut : fadeIn)} 0.3s linear;
+    transition: visibility 0.3s linear;
+`;
+
+class ItemBase extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isVisible: false
+        };
+        this.onVisibilityChange = this.onVisibilityChange.bind(this);
+    }
+    componentDidMount() {
+        console.log("item", this.props.tag);
+    }
+    onVisibilityChange(isVisible) {
+        this.setState({ isVisible });
+    }
+    render() {
+        const {
+            link,
+            cols,
+            children,
+            tag,
+            secondary,
+            className,
+            theme,
+            images,
+            videoBackground,
+            disableOverlay
+        } = this.props;
+        return (
+            <VisibilitySensor
+                partialVisibility={true}
+                onChange={this.onVisibilityChange}
             >
-                {videoBackground && (
-                    <VideoBackground videoUrl={videoBackground.file.url} />
-                )}
-                {!disableOverlay && <Overlay theme={theme} />}
-                {link && (
-                    <HoverOverlay type={linkType(link)}>
-                        {linkType(link) === "external" && (
-                            <HoverOverlayLink>
-                                go to<br />
-                                {link.split('//')[1].split('/')[0]}
-                            </HoverOverlayLink>
-                        )}
-                    </HoverOverlay>
-                )}
-                <InnerItem>
-                    <div>
-                        <TagContainer>
-                            {tag ? <Tag theme={theme}>{tag}</Tag> : null}
-                            {secondary ? (
-                                <div style={{ fontSize: 13 }}>{secondary}</div>
-                            ) : null}
-                        </TagContainer>
-                        <Description>{children}</Description>
-                    </div>
-                    <div>
-                        {images.image && images.image.sizes ? (
-                            <Image
-                                sizes={images.image.sizes}
+                <Col
+                    cols={cols}
+                    className={this.state.isVisible ? "visible" : "hidden"}
+                    style={{ padding: "4px" }}
+                >
+                    <Fade out={!this.state.isVisible}>
+                        <WrapWithLink link={link}>
+                            <div
+                                className={className}
                                 style={{
-                                    margin: "0 auto",
-                                    maxWidth: "200px",
-                                    width: "100%"
+                                    backgroundImage:
+                                        getBackgroundImage(images.background) ||
+                                        "https://placehold.it/1800x512",
+                                    position: "relative"
                                 }}
-                                // resolutions={images.image.resolutions}
-                            />
-                        ) : null}
-                    </div>
-                </InnerItem>
-            </div>
-        </WrapWithLink>
-    </Col>
-);
+                            >
+                                {videoBackground && (
+                                    <VideoBackground
+                                        videoUrl={videoBackground.file.url}
+                                    />
+                                )}
+                                {!disableOverlay && <Overlay theme={theme} />}
+                                {link && (
+                                    <HoverOverlay type={linkType(link)}>
+                                        {linkType(link) === "external" && (
+                                            <HoverOverlayLink>
+                                                go to<br />
+                                                {
+                                                    link
+                                                        .split("//")[1]
+                                                        .split("/")[0]
+                                                }
+                                            </HoverOverlayLink>
+                                        )}
+                                    </HoverOverlay>
+                                )}
+                                <InnerItem>
+                                    <div>
+                                        <TagContainer>
+                                            {tag ? (
+                                                <Tag theme={theme}>{tag}</Tag>
+                                            ) : null}
+                                            {secondary ? (
+                                                <div style={{ fontSize: 13 }}>
+                                                    {secondary}
+                                                </div>
+                                            ) : null}
+                                        </TagContainer>
+                                        <Description>{children}</Description>
+                                    </div>
+                                    <div>
+                                        {images.image && images.image.sizes ? (
+                                            <Image
+                                                sizes={images.image.sizes}
+                                                style={{
+                                                    margin: "0 auto",
+                                                    maxWidth: "200px",
+                                                    width: "100%"
+                                                }}
+                                                // resolutions={images.image.resolutions}
+                                            />
+                                        ) : null}
+                                    </div>
+                                </InnerItem>
+                            </div>
+                        </WrapWithLink>
+                    </Fade>
+                </Col>
+            </VisibilitySensor>
+        );
+    }
+}
 
 export const Item = styled(ItemBase)`
     background-position: center center;
@@ -253,13 +321,16 @@ export const Item = styled(ItemBase)`
     text-decoration: none;
     color: ${props => (props.theme == "dark" ? "#FFF" : "#001d60")};
     box-sizing: border-box;
-    background-color: ${props => (props.theme == "dark" ? "#030303" : "#EBEBEB")};
+    background-color: ${props =>
+        props.theme == "dark" ? "#030303" : "#EBEBEB"};
     position: relative;
-    transition: box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s;
+    .hidden {
+        display: none;
+    }
     a {
         color: inherit;
     }
-    transition: filter 0.3s;
     &:hover {
         ${props =>
             props.link
