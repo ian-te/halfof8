@@ -211,7 +211,7 @@ const Fade = styled.div`
 class ItemBase extends React.Component {
     constructor(props) {
         super(props);
-        this.state = 
+        this.state = {
             isVisible: true,
             isMounted: false
         };
@@ -239,68 +239,62 @@ class ItemBase extends React.Component {
                 onChange={this.onVisibilityChange}
             >
                 <Col cols={cols} style={{ padding: "4px" }}>
-                    <Fade out={false}>
-                        <WrapWithLink link={link}>
-                            <div
-                                className={className}
-                                style={{
-                                    backgroundImage:
-                                        getBackgroundImage(images.background) ||
-                                        "https://placehold.it/1800x512",
-                                    position: "relative"
-                                }}
-                            >
-                                {videoBackground && (
-                                    <VideoBackground
-                                        videoUrl={videoBackground.file.url}
-                                    />
-                                )}
-                                {!disableOverlay && <Overlay theme={theme} />}
-                                {link && (
-                                    <HoverOverlay type={linkType(link)}>
-                                        {linkType(link) === "external" && (
-                                            <HoverOverlayLink>
-                                                go to<br />
-                                                {
-                                                    link
-                                                        .split("//")[1]
-                                                        .split("/")[0]
-                                                }
-                                            </HoverOverlayLink>
-                                        )}
-                                    </HoverOverlay>
-                                )}
-                                <InnerItem>
-                                    <div>
-                                        <TagContainer>
-                                            {tag ? (
-                                                <Tag theme={theme}>{tag}</Tag>
-                                            ) : null}
-                                            {secondary ? (
-                                                <div style={{ fontSize: 13 }}>
-                                                    {secondary}
-                                                </div>
-                                            ) : null}
-                                        </TagContainer>
-                                        <Description>{children}</Description>
-                                    </div>
-                                    <div>
-                                        {images.image && images.image.sizes ? (
-                                            <Image
-                                                sizes={images.image.sizes}
-                                                style={{
-                                                    margin: "0 auto",
-                                                    maxWidth: "200px",
-                                                    width: "100%"
-                                                }}
-                                                // resolutions={images.image.resolutions}
-                                            />
+                    <WrapWithLink link={link}>
+                        <div
+                            className={className}
+                            style={{
+                                backgroundImage:
+                                    getBackgroundImage(images.background) ||
+                                    "https://placehold.it/1800x512",
+                                position: "relative"
+                            }}
+                        >
+                            {videoBackground && (
+                                <VideoBackground
+                                    videoUrl={videoBackground.file.url}
+                                />
+                            )}
+                            {!disableOverlay && <Overlay theme={theme} />}
+                            {link && (
+                                <HoverOverlay type={linkType(link)}>
+                                    {linkType(link) === "external" && (
+                                        <HoverOverlayLink>
+                                            go to<br />
+                                            {link.split("//")[1].split("/")[0]}
+                                        </HoverOverlayLink>
+                                    )}
+                                </HoverOverlay>
+                            )}
+                            <InnerItem>
+                                <div>
+                                    <TagContainer>
+                                        {tag ? (
+                                            <Tag theme={theme}>{tag}</Tag>
                                         ) : null}
-                                    </div>
-                                </InnerItem>
-                            </div>
-                        </WrapWithLink>
-                    </Fade>
+                                        {secondary ? (
+                                            <div style={{ fontSize: 13 }}>
+                                                {secondary}
+                                            </div>
+                                        ) : null}
+                                    </TagContainer>
+                                    <Description>{children}</Description>
+                                </div>
+                                <div>
+                                    {images.image && images.image.sizes ? (
+                                        <Image
+                                            sizes={images.image.sizes}
+                                            style={{
+                                                margin: "0 auto",
+                                                maxWidth: "200px",
+                                                width: "100%"
+                                            }}
+                                            // resolutions={images.image.resolutions}
+                                        />
+                                    ) : null}
+                                </div>
+                            </InnerItem>
+                        </div>
+                    </WrapWithLink>
                 </Col>
             </VisibilitySensor>
         );
