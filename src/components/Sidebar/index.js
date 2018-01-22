@@ -38,6 +38,8 @@ const SidebarStyled = styled(Sidebar)`
   : ''}
   @media(max-width: 560px){
     position: relative;
+    width: 100%;
+    margin: 0 auto;
   }
 `
 
