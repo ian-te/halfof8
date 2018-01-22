@@ -211,18 +211,14 @@ const Fade = styled.div`
 class ItemBase extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            isVisible: false,
+        this.state = 
+            isVisible: true,
             isMounted: false
         };
         this.onVisibilityChange = this.onVisibilityChange.bind(this);
     }
-    componentDidMount(){
-        this.setState({isMounted: true})
-    }
     onVisibilityChange(isVisible) {
-        if(this.state.isMounted)
-            this.setState({ isVisible:true });
+        // this.setState({ isVisible: true });
     }
     render() {
         const {
@@ -242,12 +238,8 @@ class ItemBase extends React.Component {
                 partialVisibility={true}
                 onChange={this.onVisibilityChange}
             >
-                <Col
-                    cols={cols}
-                    className={this.state.isVisible ? "visible" : "hidden"}
-                    style={{ padding: "4px" }}
-                >
-                    <Fade out={!this.state.isVisible}>
+                <Col cols={cols} style={{ padding: "4px" }}>
+                    <Fade out={false}>
                         <WrapWithLink link={link}>
                             <div
                                 className={className}
