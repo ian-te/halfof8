@@ -26,7 +26,7 @@ const FooterStyled = styled(FooterBase)`
     font-size: 13px;
     line-height: 1.85;
     letter-spacing: left;
-    text-align: center;
+    text-align: left;
     color: ${props => props.color || '#001d60'};
 `
 
