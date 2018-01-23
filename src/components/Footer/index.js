@@ -20,12 +20,12 @@ const FooterStyled = styled(FooterBase)`
     padding-top: 20px;
     padding-bottom: 10px;
     padding-right: 5px;
-    padding-right: 5px;
-    text-align: center;
+    padding-left: 5px;
+    text-align: left;
 
     font-size: 13px;
     line-height: 1.85;
-    letter-spacing: normal;
+    letter-spacing: left;
     text-align: center;
     color: ${props => props.color || '#001d60'};
 `
