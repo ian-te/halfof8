@@ -23,8 +23,8 @@ const FooterStyled = styled(FooterBase)`
     padding-left: 5px;
     text-align: left;
 
-    font-size: 13px;
-    line-height: 1.85;
+    font-size: 11px;
+    line-height: 1.95;
     letter-spacing: left;
     text-align: left;
     color: ${props => props.color || '#001d60'};
