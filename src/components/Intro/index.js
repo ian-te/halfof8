@@ -81,7 +81,7 @@ export const Intro = styled(IntroBase)`
   line-height: ${1.38};
   min-height: ${1.38 * 3}em;
   text-align: left;
-  color: #000000;
+  color: #FFFFFF;
   padding: 26px;
   margin: 26px 0px;
   box-sizing: content-box;
