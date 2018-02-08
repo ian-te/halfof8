@@ -23,7 +23,7 @@ const FooterStyled = styled(FooterBase)`
     padding-left: 5px;
     text-align: left;
 
-    font-size: 10px;
+    font-size: 8px;
     line-height: 1.95;
     letter-spacing: left;
     text-align: left;
