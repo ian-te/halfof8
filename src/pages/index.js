@@ -54,7 +54,7 @@ const IndexPage = ({ data, transition }) => {
     return (
         <div>
             <Section
-                bg="#030303"
+                bg="#FFFFFF"
                 style={{ alignItems: "top", border: "4px solid #FFF" }}
             >
                 <Col cols={2}>
