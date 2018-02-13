@@ -7,8 +7,8 @@ const FooterBase = ({ className }) => (
     <div className={className}>
       <p>
       &copy; 2012 – {new Date().getFullYear()}, 
-      👋 Car does not move till we are all buckled up, so keep in touch via {' '}<a href="mailto:info@halfof8.com">info@halfof8.com</a>, 
-      {' '}<a href="https://fb.com/stayswim">fb</a>, {' '}<a href="https://instagram.com/halfof8">insta</a><br/>
+      👋 Car does not move till we are all buckled up, so keep in touch via {' '}<a href="mailto:info@halfof8.com">info@halfof8.com</a><br/>
+      Art Direction by <a href="https://instagram.com/halfof8">Anton Sokolov</a>, 
       Developed by <a href="https://github.com/yante" target="_blank" >Yan Te</a>. 
       Typefaces used: Space Mono by <a href="http://www.colophon-foundry.org/" target="_blank" >Colophon</a>, 
       Work Sans by <a href="https://github.com/weiweihuanghuang/Work-Sans" target="_blank" >Wei Huang</a>
