@@ -143,7 +143,7 @@ const HoverOverlay = styled.div`
         content: "";
         width: 90px;
         height: 90px;
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: rgba(0, 0, 0, 0);
         border-radius: 90px;
         left: 50%;
         top: 50%;
