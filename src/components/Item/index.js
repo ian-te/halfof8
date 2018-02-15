@@ -143,7 +143,7 @@ const HoverOverlay = styled.div`
         content: "";
         width: 90px;
         height: 90px;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: rgba(82, 97, 255, 0.2);
         border-radius: 90px;
         left: 50%;
         top: 50%;
@@ -158,7 +158,7 @@ const HoverOverlay = styled.div`
     }
     @media (min-width: 590px) {
         &:hover {
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: rgba(0, 0, 0, 0);
             opacity: 1;
         }
         &:hover:before {
@@ -175,7 +175,7 @@ const HoverOverlayLink = styled.div`
     font-size: 14px;
     border-radius: 27px;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(82, 97, 255, 0.2);
 `;
 
 const fadeIn = keyframes`
