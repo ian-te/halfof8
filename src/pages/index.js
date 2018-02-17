@@ -3,7 +3,7 @@ import Link from "gatsby-link";
 import { Section, Col } from "../components/Section";
 import { Item } from "../components/Item";
 import Widget from "../components/Widget";
-import { Intro } from "../components/Intro";
+/*import { Intro } from "../components/Intro";*/
 const getLink = node =>
     node.externalUrl
         ? node.externalUrl
