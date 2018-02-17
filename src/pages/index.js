@@ -3,7 +3,7 @@ import Link from "gatsby-link";
 import { Section, Col } from "../components/Section";
 import { Item } from "../components/Item";
 import Widget from "../components/Widget";
-/*import { Intro } from "../components/Intro";*/
+{/* import { Intro } from "../components/Intro"; */}
 const getLink = node =>
     node.externalUrl
         ? node.externalUrl
@@ -57,7 +57,7 @@ const IndexPage = ({ data, transition }) => {
                 bg="#030303"
                 style={{ alignItems: "top", border: "4px solid #FFF" }}
             >
-                /*<Col cols={2}>
+                  {/*<Col cols={2}>
                     <Intro
                         phrases={[
                             "Visuals, Software_UX, Layouts",
@@ -66,7 +66,7 @@ const IndexPage = ({ data, transition }) => {
                             "Strategy, Emotion, Language"
                         ]}
                     />
-                </Col>*/
+                 </Col>*/}
                 <Item
                     cols={2}
                     tag={items[0].node.tag}
