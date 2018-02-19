@@ -68,9 +68,9 @@ const IndexPage = ({ data, transition }) => {
                     </div>
                     <div>
                         <a href="https://soundcloud.com/half8">Soundcloud</a>
-                        {'         '}
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         <a href="fb.com/stayswim">Facebook</a>
-                        {'         '}
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         <a href="mailto:jetixc@gmail.com">jetixc@gmail.com</a>
                     </div>
                 </div>
