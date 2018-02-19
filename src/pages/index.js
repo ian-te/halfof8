@@ -71,7 +71,8 @@ const IndexPage = ({ data, transition }) => {
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         <a href="fb.com/stayswim">Facebook</a>
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <a href="mailto:jetixc@gmail.com">jetixc@gmail.com</a>
+                        <a href="mailto:jetixc@gmail.com">jetixc@gmail.com</a> 
+                        &nbsp; &nbsp; 
                     </div>
                 </div>
             </Footer>
