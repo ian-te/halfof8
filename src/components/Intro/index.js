@@ -56,7 +56,7 @@ class IntroBase extends React.Component {
     new TxtType(this.el, this.phrases, 2000)
   }
   phrases = [
-    'Visuals, Software UX,Layouts',
+    'Visuals, Software UX, Layouts',
     'Interaction, Empathy, Engagement',
     'Digital, Geometry, Environment',
     'Strategy, Emotion, Language',
@@ -72,6 +72,11 @@ class IntroBase extends React.Component {
     )
   }
 }
+
+export const TypingText = styled(IntroBase)`
+display: inline;
+font-size: inherit;
+`
 
 export const Intro = styled(IntroBase)`
   font-family: 'Space Mono', monospace;

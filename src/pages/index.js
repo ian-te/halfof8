@@ -3,7 +3,8 @@ import Link from "gatsby-link";
 import { Section, Col } from "../components/Section";
 import { Item } from "../components/Item";
 import Widget from "../components/Widget";
-{/* import { Intro } from "../components/Intro"; */}
+import Footer from "../components/Footer";
+import { TypingText } from "../components/Intro";
 const getLink = node =>
     node.externalUrl
         ? node.externalUrl
@@ -53,36 +54,26 @@ const IndexPage = ({ data, transition }) => {
 
     return (
         <div>
-            <Section
-                bg="#030303"
-                style={{ alignItems: "top", border: "4px solid #FFF" }}
-            >
-                  {/*<Col cols={2}>
-                    <Intro
-                        phrases={[
-                            "Visuals, Software_UX, Layouts",
-                            "Interaction, Empathy, Engagement",
-                            "Digital, Geometry, Environment",
-                            "Strategy, Emotion, Language"
-                        ]}
-                    />
-                 </Col>*/}
-                <Item
-                    cols={2}
-                    tag={items[0].node.tag}
-                    link={getLink(items[0].node)}
-                    images={getNodeImages(items[0].node)}
-                    backgroundVideoId={items[0].node.backgroundVideoId}
-                    theme="dark"
-                >
-                    <div
-                        dangerouslySetInnerHTML={{
-                            __html:
-                                items[0].node.shortText.childMarkdownRemark.html
-                        }}
-                    />
-                </Item>
-            </Section>
+            <Footer>
+                <div style={{
+                    display: "flex", 
+                    flexWrap: 'wrap',
+                    justifyContent: 'space-between',
+                    fontWeight: 500
+                }}>
+                    <p>
+                        <b>Half of Eight = <TypingText /> <br/></b>
+                        In addition it's a project series under Anton Sokolov’s direction based in St Petersburg, Russia. You could check snapshots of work in the feed below.
+                    </p>
+                    <p>
+                            <a href="https://soundcloud.com/half8">Soundcloud</a>
+                            {' '}
+                            <a href="">Facebook</a>
+                            {' '}
+                            <a href="mailto:jetixc@gmail.com">jetixc@gmail.com</a>
+                    </p>
+                </div>
+            </Footer>
             <Section>
                 {tiles.map((edge, key) => getTileComponent(edge, key))}
             </Section>
