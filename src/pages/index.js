@@ -59,18 +59,18 @@ const IndexPage = ({ data, transition }) => {
                     display: "flex", 
                     flexWrap: 'wrap',
                     justifyContent: 'space-between',
-                    fontWeight: 500,
+                    fontWeight: 400,
                     fontSize: '12px'
                 }}>
                     <div>
-                        <strong>Half of Eight = <TypingText /> <br/></strong>
+                        Half of Eight = <TypingText /> <br/>
                         In addition it's a project series under Anton Sokolov’s direction based in St Petersburg, Russia. You could check snapshots of work in the feed below.
                     </div>
                     <div>
                         <a href="https://soundcloud.com/half8">Soundcloud</a>
-                        {' '}
-                        <a href="">Facebook</a>
-                        {' '}
+                        {'         '}
+                        <a href="fb.com/stayswim">Facebook</a>
+                        {'         '}
                         <a href="mailto:jetixc@gmail.com">jetixc@gmail.com</a>
                     </div>
                 </div>
