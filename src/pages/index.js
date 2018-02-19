@@ -55,12 +55,12 @@ const IndexPage = ({ data, transition }) => {
     return (
         <div>
             <Footer>
-            <p>
                 <div style={{
                     display: "flex", 
                     flexWrap: 'wrap',
                     justifyContent: 'space-between',
-                    fontWeight: 500
+                    fontWeight: 500,
+                    fontSize: '12px'
                 }}>
                     <div>
                         <strong>Half of Eight = <TypingText /> <br/></strong>
@@ -74,7 +74,6 @@ const IndexPage = ({ data, transition }) => {
                         <a href="mailto:jetixc@gmail.com">jetixc@gmail.com</a>
                     </div>
                 </div>
-                </p>
             </Footer>
             <Section>
                 {tiles.map((edge, key) => getTileComponent(edge, key))}
