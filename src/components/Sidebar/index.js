@@ -3,6 +3,7 @@ import Logo from './logo'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 import {MobileHide} from '../MobileHide'
+import { TypingText } from "../components/Intro";
 
 const Sidebar = ({ className, color, bgColor }) => (
   <div className={className}>
@@ -10,7 +11,10 @@ const Sidebar = ({ className, color, bgColor }) => (
       <Logo fill={color || "#000"} hoverfill={color ? '#CCC' : "#0000FF"} />
     </Link>
     <MobileHide>
-     <p>Four, simply divided. Three, cut vertically down the middle. Zero, cut horizontally.
+     <p>Half of Eight = </br><TypingText /></br></br>
+        Four, simply divided.</br>
+        Three, cut vertically down the middle.</br> 
+        Zero, cut horizontally.
      </p>
     </MobileHide>
   </div>
