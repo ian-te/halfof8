@@ -12,7 +12,6 @@ const Sidebar = ({ className, color, bgColor }) => (
     </Link>
     <MobileHide>
      <p>Half of Eight</p> 
-     <p><TypingText /></p>
     </MobileHide>
   </div>
 )
