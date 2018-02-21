@@ -2,8 +2,8 @@ import React from 'react'
 import Logo from './logo'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
+import { TypingText } from '../Intro'
 import {MobileHide} from '../MobileHide'
-import { TypingText } from "../Intro";
 
 const Sidebar = ({ className, color, bgColor }) => (
   <div className={className}>
