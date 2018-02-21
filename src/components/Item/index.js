@@ -307,7 +307,7 @@ export const Item = styled(ItemBase)`
     height: 100%;
     min-height: 512px;
     text-decoration: none;
-    color: ${props => (props.theme == "dark" ? "#FFF" : "#001d60")};
+    color: ${props => (props.theme == "dark" ? "#FFF" : "#000")};
     box-sizing: border-box;
     background-color: ${props =>
         props.theme == "dark" ? "#030303" : "#EBEBEB"};
