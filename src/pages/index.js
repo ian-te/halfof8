@@ -54,7 +54,7 @@ const IndexPage = ({ data, transition }) => {
 
     return (
         <div>
-            <Footer>
+        {/*<Footer>
                 <div style={{
                     display: "flex", 
                     flexWrap: 'wrap',
@@ -75,7 +75,7 @@ const IndexPage = ({ data, transition }) => {
                         &nbsp; &nbsp; 
                     </div>
                 </div>
-            </Footer>
+            </Footer>*/}
             <Section>
                 {tiles.map((edge, key) => getTileComponent(edge, key))}
             </Section>
