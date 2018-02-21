@@ -3,7 +3,7 @@ import Logo from './logo'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 import {MobileHide} from '../MobileHide'
-import { TypingText } from "../components/Intro";
+import { TypingText } from "../Intro";
 
 const Sidebar = ({ className, color, bgColor }) => (
   <div className={className}>
