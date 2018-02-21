@@ -11,11 +11,7 @@ const Sidebar = ({ className, color, bgColor }) => (
       <Logo fill={color || "#000"} hoverfill={color ? '#CCC' : "#0000FF"} />
     </Link>
     <MobileHide>
-     <p>Half of Eight =<br /> <TypingText /><br /><br />
-        <p>Four, simply divided.<br />
-        Three, cut vertically down the middle.<br />
-        Zero, cut horizontally.
-     </p>
+     <p>Half of Eight = <TypingText /> </p>
     </MobileHide>
   </div>
 )
