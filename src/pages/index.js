@@ -54,28 +54,7 @@ const IndexPage = ({ data, transition }) => {
 
     return (
         <div>
-        {/*<Footer>
-                <div style={{
-                    display: "flex", 
-                    flexWrap: 'wrap',
-                    justifyContent: 'space-between',
-                    fontWeight: 400,
-                    fontSize: '12px'
-                }}>
-                    <div>
-                        Half of Eight = <TypingText /> <br/>
-                        In addition it's a project series under Anton Sokolov’s direction based in St Petersburg, Russia. You could check snapshots of work in the feed below.
-                    </div>
-                    <div>
-                        <a href="https://soundcloud.com/half8">Soundcloud</a>
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <a href="fb.com/stayswim">Facebook</a>
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <a href="mailto:jetixc@gmail.com">jetixc@gmail.com</a> 
-                        &nbsp; &nbsp; 
-                    </div>
-                </div>
-            </Footer>*/}
+    
             <Section>
                 {tiles.map((edge, key) => getTileComponent(edge, key))}
             </Section>
