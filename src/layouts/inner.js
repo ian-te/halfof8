@@ -95,7 +95,7 @@ export default function Template({ data, transition, pathContext }) {
                             __html: node.body.childMarkdownRemark.html
                         }}
                     />
-                    {pathContext.prev && <ButtonContainer>
+                     {/*{pathContext.prev && <ButtonContainer>
                         <Button
                             color={node.textColor}
                             to={`/project/${pathContext.prev.node.slug}`} 
@@ -116,7 +116,8 @@ export default function Template({ data, transition, pathContext }) {
                             to={`/project/${pathContext.next.node.slug}`} >
                             next project
                         </Button>
-                    </ButtonContainer>}
+                    </ButtonContainer>}*/}
+
                     <Footer color={node.textColor} >
                         <p>
                             &copy; 2012 – {new Date().getFullYear()}, 
