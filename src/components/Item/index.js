@@ -31,12 +31,13 @@ const Tag = styled.div`
     align-items: center;
     box-sizing: border-box;
     font-size: 12px;
+    opacity: 0;
     font-weight: 500;
     text-align: left;
     background-color: ${props =>
         props.theme == "dark"
-            ? `rgba(255, 255, 255, 0.2)`
-            : `rgba(0, 29, 96, 0.1)`};
+            ? `rgba(255, 255, 255, 0)`
+            : `rgba(0, 29, 96, 0)`};
 `;
 
 const InnerItem = styled.div`
