@@ -269,9 +269,10 @@ class ItemBase extends React.Component {
                             <InnerItem>
                                 <div>
                                     <TagContainer>
-                                        {tag ? (
+                                        {/* Uncomment this to enable tags */}
+                                        {/* {tag ? (
                                             <Tag theme={theme}>{tag}</Tag>
-                                        ) : null}
+                                        ) : null} */}
                                         {secondary ? (
                                             <div style={{ fontSize: 13 }}>
                                                 {secondary}

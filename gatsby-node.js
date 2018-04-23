@@ -1,4 +1,4 @@
-const _ = require(`lodash`);
+const each = require(`lodash/each`);
 const Promise = require(`bluebird`);
 const path = require(`path`);
 const slash = require(`slash`);
@@ -63,7 +63,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             // product node. We'll just use the Contentful id for the slug.
             let prev = null;
             let next = null;
-            _.each(
+            each(
                 result.data.allContentfulPortfolioItem.edges,
                 (edge, key) => {
                     // Gatsby uses Redux to manage its internal state.

@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "",
   "dependencies": {
+    "dotenv": "^5.0.1",
     "gatsby": "^1.9.45",
     "gatsby-image": "^1.0.24",
     "gatsby-link": "^1.6.17",
