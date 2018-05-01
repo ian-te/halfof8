@@ -28,6 +28,7 @@ p {
     font-size: 12px;
     line-height: 18px;
     margin-bottom: 1.3em;
+    hanging-punctuation: first;
 }
 
 h1,
