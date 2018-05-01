@@ -272,7 +272,7 @@ class ItemBase extends React.Component {
                                             <Tag theme={theme}>{tag}</Tag>
                                         ) : null} */}
                                         {secondary ? (
-                                            <div style={{ fontSize: 13 }}>
+                                            <div style={{ fontSize: 10 }}>
                                                 {secondary}
                                             </div>
                                         ) : null}
