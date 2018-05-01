@@ -25,6 +25,8 @@ body {
 }
 
 p {
+    font-size: 12px;
+    line-height: 18px;
     margin-bottom: 1.3em;
 }
 
@@ -39,8 +41,8 @@ h4 {
 }
 
 h1 {
+    font-size: 18px;
     margin-top: 0;
-    font-size: 3.998em;
 }
 
 h2 {
