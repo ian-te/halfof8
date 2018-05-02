@@ -28,7 +28,7 @@ p {
     font-size: 12px;
     line-height: 18px;
     /* margin-bottom: 1.3em; */
-    hanging-punctuation: first;
+    hanging-punctuation: first;  
 }
 
 h1,
@@ -368,16 +368,6 @@ dd {
     margin-bottom: 1.45rem;
 }
 
-p {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
-    margin-bottom: 1.45rem;
-}
 
 figure {
     margin-left: 0;
