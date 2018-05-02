@@ -48,24 +48,14 @@ const InnerItem = styled.div`
     flex-direction: column;
 `;
 
-const lightGradient = `linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.5),
-    rgba(255, 255, 255, 0.4) 180px,
-    rgba(255, 255, 255, 0) 290px
-)`;
+const lightGradient = `linear-gradient(to right, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0.988) 7.7%, hsla(0, 0%, 100%, 0.956) 14.8%, hsla(0, 0%, 100%, 0.91) 21%, hsla(0, 0%, 100%, 0.854) 26.5%, hsla(0, 0%, 100%, 0.794) 31.4%, hsla(0, 0%, 100%, 0.731) 35.9%, hsla(0, 0%, 100%, 0.667) 40.1%, hsla(0, 0%, 100%, 0.599) 44.2%, hsla(0, 0%, 100%, 0.533) 48.1%, hsla(0, 0%, 100%, 0.466) 52%, hsla(0, 0%, 100%, 0.397) 56%, hsla(0, 0%, 100%, 0.33) 60.1%, hsla(0, 0%, 100%, 0.266) 64.3%, hsla(0, 0%, 100%, 0.203) 68.8%, hsla(0, 0%, 100%, 0.143) 73.7%, hsla(0, 0%, 100%, 0.089) 79.2%, hsla(0, 0%, 100%, 0.043) 85.4%, hsla(0, 0%, 100%, 0.011) 92.5%, hsla(0, 0%, 100%, 0) 100%)`;
 
-const darkGradient = `linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.4) 180px,
-    rgba(0, 0, 0, 0) 290px
-)`;
+const darkGradient = `linear-gradient(to right, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.988) 7.7%, hsla(0, 0%, 0%, 0.956) 14.8%, hsla(0, 0%, 0%, 0.91) 21%, hsla(0, 0%, 0%, 0.854) 26.5%, hsla(0, 0%, 0%, 0.794) 31.4%, hsla(0, 0%, 0%, 0.731) 35.9%, hsla(0, 0%, 0%, 0.667) 40.1%, hsla(0, 0%, 0%, 0.599) 44.2%, hsla(0, 0%, 0%, 0.533) 48.1%, hsla(0, 0%, 0%, 0.466) 52%, hsla(0, 0%, 0%, 0.397) 56%, hsla(0, 0%, 0%, 0.33) 60.1%, hsla(0, 0%, 0%, 0.266) 64.3%, hsla(0, 0%, 0%, 0.203) 68.8%, hsla(0, 0%, 0%, 0.143) 73.7%, hsla(0, 0%, 0%, 0.089) 79.2%, hsla(0, 0%, 0%, 0.043) 85.4%, hsla(0, 0%, 0%, 0.011) 92.5%, hsla(0, 0%, 0%, 0) 100%)`;
 
 const Overlay = styled.div`
     position: absolute;
+    width: 290px;
     left: 0;
-    right: 0;
     top: 0;
     bottom: 0;
     background-image: ${props =>
