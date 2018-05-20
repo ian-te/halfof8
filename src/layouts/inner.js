@@ -88,7 +88,7 @@ export default function Template({ data, transition, pathContext }) {
                             content={node.body.childMarkdownRemark.html.replace(/<(?:.|\n)*?>/gm, '')}
                         />
                     </Helmet>
-                    <BackToHome to="/">&lt; to project feed</BackToHome>
+                    
                     <Content
                         style={{ color: node.textColor || "#000" }}
                         dangerouslySetInnerHTML={{
