@@ -112,10 +112,10 @@ const StyledLogo = styled(Logo)`
     animation: dash 7s linear forwards;
     &:hover {
         path[stroke], circle {
-            stroke: ${"#0F0"};
+            stroke: ${"#0000FF"};
         }
         path[fill] {
-            fill: ${"#0F0"};
+            fill: ${"#0000FF"};
         }
     }
     @keyframes dash {
