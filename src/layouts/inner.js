@@ -34,6 +34,29 @@ const Content = styled.div`
             }
         }
     }
+    .case-study {
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        max-width: 1600px;
+        align-content: center;
+      }
+      .case-study > div {
+        max-width: calc(50% - 20px);
+      }
+      .case-study img {
+        max-width: 100%;
+      }
+      
+      @media(max-width: 1024px) {
+        .case-study {
+          flex-direction: column;
+        }
+        .case-study > div {
+          max-width: 100%;
+          text-align: center;
+        }
+      }
     header > div {
         width: 25%;
         flex: 0 0 auto;

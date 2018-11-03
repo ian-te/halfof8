@@ -88,16 +88,6 @@ export const pageQuery = graphql`
                     tag
                     secondaryTag
                     disableOverlayMask
-                    videoBackground {
-                        file {
-                            url
-                            fileName
-                            contentType
-                            details {
-                                size
-                            }
-                        }
-                    }
                     order
                     slug
                     externalUrl
