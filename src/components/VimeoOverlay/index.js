@@ -14,30 +14,31 @@ const Overlay = styled.div`
     right: 0;
 `
 
-export default class extends React.Component { 
-    constructor(props){
+export default class extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
             popupVisible: true
         }
     }
-    componentDidMount(){
+    componentDidMount() {
         const iframes = document.querySelectorAll('iframe');
         this.players = [];
         iframes.forEach(iframe => this.players.push(new Player(iframe)))
-        this.players.forEach(player => player.pause())       
+        this.players.forEach(player => player.pause())
     }
     play = () => {
-        this.players.forEach(player => player.play())       
-        console.log(this.players)
+        this.players.forEach(player => player.play())
         this.setState({
             popupVisible: false
         })
     }
     render() {
-        if(!this.state.popupVisible) return null;
-        return <Overlay>
-            <button onClick={this.play}>Play</button>
-        </Overlay>
+        if (!this.state.popupVisible) return null;
+        return (
+            <Overlay>
+                <button onClick={this.play}>Play</button>
+            </Overlay>
+        )
     }
 }
