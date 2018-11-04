@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "",
   "dependencies": {
+    "@vimeo/player": "^2.6.4",
     "dotenv": "^5.0.1",
     "gatsby": "^1.9.279",
     "gatsby-image": "^1.0.55",

@@ -8,6 +8,7 @@ import Sidebar from "../components/Sidebar";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
 import ButtonContainer from "../components/ButtonContainer";
+import Vimeo from "../components/VimeoOverlay"
 
 const Content = styled.div`
     padding-top: 37px;
@@ -111,6 +112,7 @@ export default function Template({ data, transition, pathContext }) {
                             content={node.body.childMarkdownRemark.html.replace(/<(?:.|\n)*?>/gm, '')}
                         />
                     </Helmet>
+                    {node.videoOverlay && <Vimeo></Vimeo>}
                     
                     <Content
                         style={{ color: node.textColor || "#000" }}
@@ -168,6 +170,7 @@ export const pageQuery = graphql`
                     secondaryTag
                     backgroundColor
                     textColor
+                    videoOverlay
                     body {
                         id
                         childMarkdownRemark {
