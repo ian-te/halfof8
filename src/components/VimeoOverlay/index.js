@@ -1,4 +1,3 @@
-import Player from '@vimeo/player';
 import React from 'react';
 import styled from 'styled-components'
 
@@ -22,6 +21,7 @@ export default class extends React.Component {
         }
     }
     componentDidMount() {
+        const Player = require('@vimeo/player')
         const iframes = document.querySelectorAll('iframe');
         this.players = [];
         iframes.forEach(iframe => this.players.push(new Player(iframe)))
