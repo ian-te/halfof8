@@ -2,6 +2,20 @@ import React from 'react';
 import styled from 'styled-components'
 
 
+const Loader = styled.div`
+    color: #F00;
+    background-color: #FFF;
+    margin: 50%;
+    position: absolute;
+`
+
+const PlayButton = styled.button`
+    color: #F0A;
+    position: absolute;
+    margin: 50%;
+`
+
+
 const Overlay = styled.div`
     background-color: rgba(0,0,0, 0.4);
     position: fixed;
@@ -17,7 +31,9 @@ export default class extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            popupVisible: true
+            popupVisible: true,
+            playersLoaded: false,
+            totalPlayersLoaded: 0
         }
     }
     componentDidMount() {
@@ -25,10 +41,19 @@ export default class extends React.Component {
         const iframes = document.querySelectorAll('iframe');
         this.players = [];
         iframes.forEach(iframe => this.players.push(new Player(iframe)))
-        this.players.forEach(player => player.pause())
+        this.players.forEach(player => {
+            player.on('loaded', this.playerLoaded)
+            player.pause();
+        })
+    }
+    playerLoaded = (player) => {
+        this.setState({ totalPlayersLoaded: this.state.totalPlayersLoaded + 1 })
+        (this.state.totalPlayersLoaded == this.players.length && this.setState({
+            playersLoaded: true
+        }))
     }
     play = () => {
-        this.players.forEach(player => player.play())
+        this.players.forEach(player => player.play());
         this.setState({
             popupVisible: false
         })
@@ -37,7 +62,11 @@ export default class extends React.Component {
         if (!this.state.popupVisible) return null;
         return (
             <Overlay>
-                <button onClick={this.play}>Play</button>
+                {
+                    this.state.playersLoaded
+                        ? <PlayButton onClick={this.play}>Play</PlayButton>
+                        : <Loader>Loading</Loader>
+                }
             </Overlay>
         )
     }
