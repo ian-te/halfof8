@@ -170,7 +170,6 @@ export const pageQuery = graphql`
                     secondaryTag
                     backgroundColor
                     textColor
-                    videoOverlay
                     body {
                         id
                         childMarkdownRemark {
