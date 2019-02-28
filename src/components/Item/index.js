@@ -248,7 +248,8 @@ class ItemBase extends React.Component {
                                 <HoverOverlay type={linkType(link)}>
                                     {linkType(link) === "external" && (
                                         <HoverOverlayLink>
-                                            go to<br />
+                                            go to
+                                            <br />
                                             {link.split("//")[1].split("/")[0]}
                                         </HoverOverlayLink>
                                     )}
@@ -303,6 +304,10 @@ export const Item = styled(ItemBase)`
         props.theme == "dark" ? "#030303" : "#EBEBEB"};
     position: relative;
     transition: box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s;
+    p {
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
     .hidden {
         display: none;
     }
@@ -310,6 +315,9 @@ export const Item = styled(ItemBase)`
         color: inherit;
     }
     &:hover {
+        p {
+            opacity: 1;
+        }
         ${props =>
             props.link
                 ? `
