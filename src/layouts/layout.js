@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import MouseMoveEnchancer from '../components/MouseMoveEnchancer'
 
 const Layout = ({ className, children }) => (
   <div className={className}>{children}</div>

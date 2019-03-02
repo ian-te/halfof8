@@ -5,6 +5,7 @@ import { Item } from "../components/Item";
 import Widget from "../components/Widget";
 import Footer from "../components/Footer";
 import { TypingText } from "../components/Intro";
+import { MouseMoveContext } from "../providers/MouseMoveProvider"
 const getLink = node =>
     node.externalUrl
         ? node.externalUrl
@@ -53,11 +54,12 @@ const IndexPage = ({ data, transition }) => {
         .sort((prev, next) => prev.node.order - next.node.order);
 
     return (
-        <div>
-    
-            <Section>
-                {tiles.map((edge, key) => getTileComponent(edge, key))}
-            </Section>
+        <div>   
+            <MouseMoveContext>
+                <Section>
+                    {tiles.map((edge, key) => getTileComponent(edge, key))}
+                </Section>
+            </MouseMoveContext>
         </div>
     );
 };
