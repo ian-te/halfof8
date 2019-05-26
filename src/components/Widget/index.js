@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Col } from "../Section";
 
 const Widget = ({ embedUrl, name, width }) => (
-    <Col cols={width} style={{ padding: '4px', height: 512 }}>
+    <Col cols={width} style={{ padding: '4px', height: '512px' }}>
         <iframe
             width="100%"
             height="100%"
