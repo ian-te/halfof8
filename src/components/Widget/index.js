@@ -6,6 +6,9 @@ import { Col } from "../Section";
 const Inner = styled.div`
     min-height: 512px;
     padding: 4px;
+    iframe {
+        display: block;
+    }
 `;
 
 const Widget = ({ embedUrl, name, width }) => (
