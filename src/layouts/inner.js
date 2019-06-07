@@ -43,7 +43,7 @@ const Content = styled.div`
         align-content: center;
       }
       .case-study > div {
-        max-width: calc(50% - 20px);
+        width: calc(50% - 20px);
       }
       .case-study img {
         max-width: 100%;
