@@ -54,7 +54,7 @@ const Content = styled.div`
           flex-direction: column;
         }
         .case-study > div {
-          max-width: 100%;
+          width: 100%;
           text-align: center;
         }
       }
