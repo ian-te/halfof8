@@ -14,7 +14,7 @@ body {
     background-color: white;
     font-family: 'Work Sans', Helvetica, Arial, sans-serif;
     font-weight: 400;
-    line-height: 1.45;
+    line-height: 1.4;
     color: black;
     font-weight: normal;
     font-kerning: normal;
@@ -26,7 +26,7 @@ body {
 
 p {
     font-size: 12px;
-    line-height: 18px;
+    line-height: 16.8px;
     /* margin-bottom: 1.3em; */
     hanging-punctuation: first;  
 }
