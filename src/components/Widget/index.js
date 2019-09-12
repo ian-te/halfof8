@@ -5,7 +5,7 @@ import { Col } from "../Section";
 
 const Inner = styled.div`
     min-height: 512px;
-    padding: 4px;
+    padding: 0px;
     iframe {
         display: block;
     }
