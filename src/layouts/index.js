@@ -44,7 +44,7 @@ const TemplateWrapper = props => (
                         👋 Car does not move till we are all buckled up, so keep in touch via {' '}<a href="mailto:info@halfof8.com">info@halfof8.com</a><br/>
                         Design by <a href="https://instagram.com/halfof8">Anton Sokolov</a>, 
                         development by <a href="https://github.com/yante" target="_blank" >Yan Te</a>. 
-                        Work Sans typeface by <a href="https://github.com/weiweihuanghuang/Work-Sans" target="_blank" >Wei Huang</a>
+                        Inter typeface by <a href="https://rsms.me/inter/" target="_blank" >Rasmus Andersson</a>
                     </p>
                 </Footer>
             </div>
