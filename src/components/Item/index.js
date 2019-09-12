@@ -227,7 +227,7 @@ class ItemBase extends React.Component {
                 partialVisibility={true}
                 onChange={this.onVisibilityChange}
             >
-                <Col cols={cols} style={{ padding: "4px" }}>
+                <Col cols={cols} style={{ padding: "0px" }}>
                     <WrapWithLink link={link}>
                         <div
                             className={className}
