@@ -141,17 +141,17 @@ export default function Template({ data, transition, pathContext }) {
                             to={`/project/${pathContext.next.node.slug}`} >
                             next project
                         </Button>
-                    </ButtonContainer>}*/}
+                    </ButtonContainer>
 
-//                     <Footer color={node.textColor} >
-//                         <p>
-//                         &copy; 2012 – {new Date().getFullYear()}, 
-//                         👋 Car does not move till we are all buckled up, so keep in touch via {' '}<a href="mailto:info@halfof8.com">info@halfof8.com</a><br/>
-//                         Design by <a href="https://instagram.com/halfof8">Anton Sokolov</a>, 
-//                         development by <a href="https://github.com/yante" target="_blank" >Yan Te</a>. 
-//                         Work Sans typeface by <a href="https://github.com/weiweihuanghuang/Work-Sans" target="_blank" >Wei Huang</a>
-//                         </p>
-//                     </Footer>
+                     <Footer color={node.textColor} >
+                        <p>
+                        &copy; 2012 – {new Date().getFullYear()}, 
+                        👋 Car does not move till we are all buckled up, so keep in touch via {' '}<a href="mailto:info@halfof8.com">info@halfof8.com</a><br/>
+                         Design by <a href="https://instagram.com/halfof8">Anton Sokolov</a>, 
+                        development by <a href="https://github.com/yante" target="_blank" >Yan Te</a>. 
+                         Work Sans typeface by <a href="https://github.com/weiweihuanghuang/Work-Sans" target="_blank" >Wei Huang</a>
+                         </p>
+                    </Footer>*/}
                 </div>
             </Layout>
         </div>
