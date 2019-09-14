@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Link from 'gatsby-link'
 import { TypingText } from '../Intro'
 import {MobileHide} from '../MobileHide'
+import Footer from '../Footer'
 
 const Sidebar = ({ className, color, bgColor }) => (
   <div className={className}>
@@ -11,7 +12,7 @@ const Sidebar = ({ className, color, bgColor }) => (
       <Logo fill={color || "#000"} hoverfill={color ? '#CCC' : "#0000FF"} />
     </Link>
     <MobileHide>
-     <p></p> 
+      <Footer padding="36px 48px 48px" />
     </MobileHide>
   </div>
 )
@@ -29,6 +30,9 @@ const SidebarStyled = styled(Sidebar)`
   background-color: ${props => props.bgColor ? props.bgColor : '#fff'};
   line-height: 1.7;
   max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   p {
     color: ${props => props.color ? props.color : '#000000'};
   }

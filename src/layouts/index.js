@@ -8,6 +8,7 @@ import ButtonContainer from "../components/ButtonContainer";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
 import "./index.css";
+import { MobileShow } from "../components/MobileHide";
 
 const TemplateWrapper = props => (
     <div>
@@ -38,15 +39,9 @@ const TemplateWrapper = props => (
             <div style={{ flexGrow: 1 }}>
                 {props.children()}
                 
-                <Footer>
-                    <p>
-                        &copy; 2012 – {new Date().getFullYear()}, 
-                        👋 Car does not move till we are all buckled up, so keep in touch via {' '}<a href="mailto:info@halfof8.com">info@halfof8.com</a><br/>
-                        Design by <a href="https://instagram.com/halfof8">Anton Sokolov</a>, 
-                        development by <a href="https://github.com/yante" target="_blank" >Yan Te</a>. 
-                        Inter typeface by <a href="https://rsms.me/inter/" target="_blank" >Rasmus Andersson</a>
-                    </p>
-                </Footer>
+                <MobileShow>
+                    <Footer />
+                </MobileShow>
             </div>
         </Layout>
     </div>
