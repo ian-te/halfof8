@@ -24,7 +24,7 @@ const LogoContainer = styled.div`
   @media(min-width: 560px){
     text-align: center;
     position: fixed;
-    width: 15.5%;
+    width: 17%;
     min-width: 250px;
     max-width: 320px;
   }
