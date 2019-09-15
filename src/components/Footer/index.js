@@ -29,8 +29,8 @@ const FooterStyled = styled(FooterBase)`
   padding: ${props => props.padding || '20px 25px 10px'};
   text-align: left;
   p {
-    font-size: 9px;
-    line-height: 1.95;
+    font-size: 10px;
+    line-height: 1.5;
   }
   letter-spacing: left;
   text-align: ${props => props.align || 'center'};
