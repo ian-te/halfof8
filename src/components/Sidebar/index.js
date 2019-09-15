@@ -8,20 +8,31 @@ import Footer from '../Footer'
 
 const Sidebar = ({ className, color, bgColor }) => (
   <div className={className}>
-    <Link to="/">
-      <Logo fill={color || "#000"} hoverfill={color ? '#CCC' : "#0000FF"} />
-    </Link>
+    <LogoContainer>
+      <Link to="/">
+        <Logo fill={color || "#000"} hoverfill={color ? '#CCC' : "#0000FF"} />
+      </Link>
+    </LogoContainer>
+    <div/>
     <MobileHide>
       <Footer padding="36px 48px 48px" />
     </MobileHide>
   </div>
 )
 
+const LogoContainer = styled.div`
+  @media(min-width: 560px){
+    text-align: center;
+    position: fixed;
+    width: 15.5%;
+    min-width: 250px;
+    max-width: 320px;
+  }
+`;
+
 const SidebarStyled = styled(Sidebar)`
   min-width: 250px;
-  width: 15.5%;
   height: 100%;
-  position: fixed;
   padding-top: 26px;
   flex-shrink: 0;
   flex-grow: 0;

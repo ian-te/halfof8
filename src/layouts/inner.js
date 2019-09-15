@@ -143,6 +143,7 @@ export default function Template({ data, transition, pathContext }) {
                         </Button>
                     </ButtonContainer>}*/}
 
+                <MobileShow>
                     <Footer color={node.textColor} >
                         <p>
                         &copy; 2012 – {new Date().getFullYear()}, 
@@ -152,6 +153,7 @@ export default function Template({ data, transition, pathContext }) {
                         Work Sans typeface by <a href="https://github.com/weiweihuanghuang/Work-Sans" target="_blank" >Wei Huang</a>
                         </p>
                     </Footer>
+                </MobileShow>
                 </div>
             </Layout>
         </div>
