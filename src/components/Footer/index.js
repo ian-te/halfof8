@@ -4,7 +4,7 @@ import { MobileShow, MobileHide } from "../MobileHide";
 import Link from "gatsby-link";
 
 const Text = () => (
-  <p>
+  <p>8の半<br/>
     &copy; 2012 – {new Date().getFullYear()}, 👋 
     <br/>Car does not move till we are
     all buckled up, so keep in touch via{" "}
