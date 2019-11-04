@@ -26,6 +26,8 @@ const getNextPage = (map, page) => {
     return map[index + 1];
 };
 
+const getFolder = isRootPage => isRootPage ? '/' : '/project/'
+
 exports.createPages = ({ graphql, boundActionCreators }) => {
     const { createPage } = boundActionCreators;
     return new Promise((resolve, reject) => {
@@ -47,6 +49,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                                 backgroundColor
                                 textColor
                                 order
+                                isRootPage
                             }
                         }
                     }
@@ -73,12 +76,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     const map = getNodesMap( result.data.allContentfulPortfolioItem.edges);
                     const prev = getPreivousPage( map, { id, slug });
                     const next = getNextPage( map, {id, slug})
+                    const isRootPage = edge.node.isRootPage
                     createPage({
                         // Each page is required to have a `path` as well
                         // as a template component. The `context` is
                         // optional but is often necessary so the template
                         // can query data specific to each page.
-                        path: `/project/${edge.node.slug
+                        path: `${getFolder(isRootPage)}${edge.node.slug
                             ? edge.node.slug
                             : edge.node.id}/`,
                         component: slash(productTemplate),

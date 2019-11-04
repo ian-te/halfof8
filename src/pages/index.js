@@ -8,11 +8,14 @@ import { TypingText } from "../components/Intro";
 const getLink = node =>
     node.externalUrl
         ? node.externalUrl
-        : node.slug ? "project/" + node.slug : "";
+        : node.slug ? getFolder(node.isRootPage) + node.slug : "";
 const getNodeImages = node => ({
     background: node.indexBackgroundImage,
     image: node.indexImage
 });
+
+const getFolder = isRootPage => isRootPage ? '/' : '/project/'
+
 const getTileComponent = (edge, key) => {
     const { node } = edge;
     if (edge.type == "item")
@@ -91,6 +94,7 @@ export const pageQuery = graphql`
                     order
                     slug
                     externalUrl
+                    isRootPage
                     indexImage {
                         responsiveResolution(width: 200) {
                             aspectRatio
