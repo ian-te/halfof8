@@ -14,6 +14,7 @@ export const Col = styled.div`
     grid-column: span ${props => props.cols};
     border-radius: 4px;
   }
+  height: 512px;
   @media(max-width: 900px) {
     grid-column:  span ${props => max(props.cols, 2)};
     height: calc(100vw - 20px);
