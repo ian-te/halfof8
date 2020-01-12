@@ -42,7 +42,7 @@ const InnerItem = styled.div`
     padding: 26px 26px 56px;
     position: relative;
     z-index: 1;
-    min-height: 512px;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -296,7 +296,6 @@ export const Item = styled(ItemBase)`
     background-position: center center;
     background-size: cover;
     height: 100%;
-    min-height: 512px;
     text-decoration: none;
     color: ${props => (props.theme == "dark" ? "#FFF" : "#000")};
     box-sizing: border-box;
@@ -314,16 +313,22 @@ export const Item = styled(ItemBase)`
     a {
         color: inherit;
     }
-    &:hover {
-        p {
-            opacity: 1;
+    @media(min-width: 512px) {
+        &:hover {
+            p {
+                opacity: 1;
+            }
+            ${props =>
+                props.link
+                    ? `
+            z-index: 1;
+        `
+                    : null};
         }
-        ${props =>
-            props.link
-                ? `
-        z-index: 1;
-    `
-                : null};
+    }
+    @supports(display: grid) {
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     @media (max-width: 580px) {
         min-height: 0;
