@@ -9,10 +9,14 @@ const getLink = node =>
     node.externalUrl
         ? node.externalUrl
         : node.slug ? getFolder(node.isRootPage) + node.slug : "";
-const getNodeImages = node => ({
-    background: node.indexBackgroundImage,
-    image: node.indexImage
-});
+// const getNodeImages = node => ({
+//     background: node.indexBackgroundImage,
+//     image: node.indexImage
+// });
+const getNodeImages = () => ({
+    background: {file: {url:'https://placehold.it/512'}},
+    image: null
+})
 
 const getFolder = isRootPage => isRootPage ? '/' : '/project/'
 

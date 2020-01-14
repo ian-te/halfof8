@@ -14,14 +14,14 @@ const Inner = styled.div`
 const Widget = ({ embedUrl, name, width }) => (
     <Col cols={width}>
         <Inner>
-            <iframe
+            {/* <iframe
                 width="100%"
                 height="100%"
                 scrolling="no"
                 frameBorder="no"
                 style={{marginBottom: 0}}
                 src={embedUrl}
-            />
+            /> */}
         </Inner>
     </Col>
 );
