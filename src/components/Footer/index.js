@@ -4,21 +4,12 @@ import { MobileShow, MobileHide } from "../MobileHide";
 import Link from "gatsby-link";
 
 const Text = () => (
-  <p>8の半<br/>
-    &copy; 2012 – {new Date().getFullYear()}, 👋 
-    <br/>Car does not move till we are
-    all buckled up, so keep in touch via{" "}
-    <a href="mailto:info@halfof8.com">info@halfof8.com</a>
-    <br />
-    Design by <a href="https://instagram.com/halfof8">Anton Sokolov</a>,
-    development by{" "}
-    <a href="https://github.com/yante" target="_blank">
-      Yan Te
-    </a>
-    . Inter typeface by{" "}
-    <a href="https://rsms.me/inter/" target="_blank">
-      Rasmus Andersson
-    </a>
+  <p>8の半 &copy; 2012 – {new Date().getFullYear()}, 👋  <br/>
+    Car does not move till we are all buckled up, <br/> 
+    so keep in touch via <a href="mailto:info@halfof8.com">info@halfof8.com</a><br />
+    Design by <a href="https://instagram.com/halfof8">Anton Sokolov</a>
+    Development by <a href="https://github.com/yante" target="_blank">Yan Te</a> <br/>
+    Inter typeface by <a href="https://rsms.me/inter/" target="_blank">rsms.me</a>
   </p>
 );
 const FooterBase = ({ className, children }) => (
