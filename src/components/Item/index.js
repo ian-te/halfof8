@@ -9,7 +9,7 @@ import icon_inner from "./icon_inner.svg";
 import VisibilitySensor from "react-visibility-sensor";
 const Description = styled.div`
     max-width: 250px;
-    margin-top: 22px;
+    margin-top: 12px;
     box-sizing: border-box;
     h2 {
         line-height: 1.4;
