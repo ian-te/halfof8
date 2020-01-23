@@ -19,6 +19,7 @@ const Content = styled.div`
     header {
         display: flex;
         flex-wrap: wrap;
+        padding-left: 22px;
         margin-bottom: 92px;
     }
     section,
